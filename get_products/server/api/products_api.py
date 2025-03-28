@@ -1,4 +1,4 @@
-from flask import (request, jsonify, Blueprint, url_for)
+from flask import (request, jsonify, Blueprint, url_for, make_response)
 from .data_store import products
 
 products_blueprint = Blueprint('products_api', __name__, url_prefix='/api/')
@@ -42,3 +42,14 @@ def update_product(product_id):
         updated_product['id'] = product_id
         product.update(updated_product)
     return jsonify(updated_product)
+
+
+@products_blueprint.route('/products/<product_id>', methods=['DELETE'])
+def delete_product(product_id):
+    for product in products:
+        if product['id'] == product_id:
+            products.remove(product)
+            return '', 204
+    response = make_response(jsonify({'error': 'Product not found'}), 404)
+    response.mimetype = 'application/json'
+    return response
