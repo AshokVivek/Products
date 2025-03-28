@@ -53,3 +53,24 @@ def delete_product(product_id):
     response = make_response(jsonify({'error': 'Product not found'}), 404)
     response.mimetype = 'application/json'
     return response
+
+
+@products_blueprint.route('/products/<product_id>', methods=['PATCH'])
+def patch_product(product_id):
+    data = request.get_json()
+    product = next((product for product in products if product['id'] == product_id), None)
+    if product is None:
+        response = make_response(jsonify({'error': 'Product not found'}), 404)
+        response.mimetype = 'application/json'
+        return response
+    product.update(data)
+    return jsonify(product)
+
+
+@products_blueprint.after_request
+def after_request(response):
+    if request.method == 'OPTIONS':
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, PATCH, OPTIONS'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    return response
