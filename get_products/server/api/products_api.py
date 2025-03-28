@@ -26,3 +26,19 @@ def add_product():
     response = jsonify(dict(product=data, location=location), 201)
     response.headers['Location'] = location
     return response
+
+
+@products_blueprint.route('/products/<product_id>', methods=['PUT'])
+def update_product(product_id):
+    data = request.get_json()
+    updated_product = None
+    for product in products:
+        if product['id'] == product_id:
+            product.update(data)
+            updated_product = product
+            break
+    if updated_product is None:
+        updated_product = add_product()
+        updated_product['id'] = product_id
+        product.update(updated_product)
+    return jsonify(updated_product)
