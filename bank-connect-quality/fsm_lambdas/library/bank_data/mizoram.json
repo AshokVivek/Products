@@ -1,0 +1,152 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                115,
+                115,
+                345,
+                160
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_1bc6b1a8-eb33-4167-acca-b2d5115c4b17"
+        },
+        {
+            "bbox": [
+                25,
+                140,
+                185,
+                160
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*No\\s*\\.?\\s*:?\\s*([0-9]+)\\s*.*",
+            "uuid": "accnt_bbox_562b17e7-8d5d-4389-bbfc-d8d6ccf19645"
+        },
+        {
+            "bbox": [
+                7,
+                9,
+                303,
+                244
+            ],
+            "regex": "(?i).*Account\\s*No.\\s*:?\\s*([0-9]{8,}).*",
+            "uuid": "accnt_bbox_98018627-4535-40e6-9d24-c6fbe28e4b5e"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                330,
+                110,
+                560,
+                155
+            ],
+            "from_regex": "(?i).*Between\\s*(.*?)and.*",
+            "to_bbox": [
+                330,
+                110,
+                560,
+                155
+            ],
+            "to_regex": "(?i).*Between.*and\\s*(.*)",
+            "uuid": "date_bbox_acd62247-b0c0-49d4-b435-6b9503bf4c9a"
+        },
+        {
+            "from_bbox": [
+                25,
+                200,
+                310,
+                225
+            ],
+            "from_regex": "(?i)(?:\\s*|.*)Statement.*From\\s*:?\\s*([0-9]{2}/[0-9]{2}/[0-9]{4})\\s*to.*",
+            "to_bbox": [
+                25,
+                200,
+                310,
+                225
+            ],
+            "to_regex": "(?i)(?:\\s*|.*)Statement.*to\\s*:?\\s*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "uuid": "date_bbox_9c181046-d258-4352-ba0f-28a1deb4d432"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                35,
+                185,
+                280,
+                335
+            ],
+            "regex": "(?i)(.*)\\n*Name.*",
+            "uuid": "name_bbox_efc196e9-7778-438e-874c-9f14a7d1d545"
+        },
+        {
+            "bbox": [
+                28,
+                85,
+                140,
+                100
+            ],
+            "regex": "(?i)(.*)",
+            "uuid": "name_bbox_3ee3fff0-e2f4-415b-91b6-cd18985cb485"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                300,
+                260,
+                520,
+                292
+            ],
+            "regex": "(?i).*?Branch\\s*IFSC\\s*([A-Z0-9]{11}).*",
+            "uuid": "ifsc_bbox_7ccc3cc4-d857-49e0-b203-37233fee5ea2"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                30,
+                91,
+                150,
+                270,
+                337,
+                404,
+                484,
+                563
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_79959f87-fef1-4c0f-8621-cb209799187a"
+        },
+        {
+            "vertical_lines": [
+                34,
+                104,
+                321,
+                410,
+                488,
+                563
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_70ce67c6-a6cd-47b3-b29c-d6414c0caec1"
+        }
+    ]
+}

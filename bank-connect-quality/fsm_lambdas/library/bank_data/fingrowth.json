@@ -1,0 +1,156 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                80,
+                120,
+                340,
+                150
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*Number\\s*:?\\s*([0-9]+)\\s*.*",
+            "uuid": "accnt_bbox_6906eee1-22c9-48ae-a033-f943b224cfce"
+        },
+        {
+            "bbox": [
+                15,
+                160,
+                190,
+                185
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*No\\s*:?\\s*([0-9]+)\\s*.*",
+            "uuid": "accnt_bbox_0d16f366-019a-4494-b345-fe20a5957f18"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                25,
+                100,
+                520,
+                125
+            ],
+            "regex": "(?i)(?:\\s*|.*)(.*)\\s*Fingrowth",
+            "uuid": "name_bbox_824995aa-5920-40f1-84f0-7686955c83d7"
+        },
+        {
+            "bbox": [
+                35,
+                190,
+                300,
+                225
+            ],
+            "regex": "(?i)(?:\\s*|.*)(.*)",
+            "uuid": "name_bbox_1331b2d7-d2a0-4199-8ca6-0e480cb697f7"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                35,
+                220,
+                290,
+                280
+            ],
+            "regex": "(?i)(?:\\s*|.*)(.*)",
+            "uuid": "address_bbox_7712f31d-bd00-461e-b02a-273a34a81757"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                300,
+                270,
+                500,
+                300
+            ],
+            "regex": "(?i)(?:\\s*|.*)BRANCH\\s*IFSC\\s*([A-Z0-9]+).*",
+            "uuid": "ifsc_bbox_b95508ac-35e3-4a89-b7df-31b762c96034"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                330,
+                120,
+                550,
+                150
+            ],
+            "from_regex": "(?i)(?:\\s*|.*)Between\\s*([0-9]{2}\\-[0-9]{2}\\-[0-9]{4})\\s*and.*",
+            "to_bbox": [
+                330,
+                120,
+                550,
+                150
+            ],
+            "to_regex": "(?i)(?:\\s*|.*)Between\\s*.*\\s*and\\s*([0-9]{2}\\-[0-9]{2}\\-[0-9]{4}).*",
+            "uuid": "date_bbox_2ad84ed5-b783-4ed3-8a6a-ac1d786f18de"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                102,
+                345,
+                435,
+                510
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_b2698ed0-e9d4-4182-830d-a01f6a84a2b7"
+        },
+        {
+            "vertical_lines": [
+                92,
+                150,
+                270,
+                338,
+                403,
+                483
+            ],
+            "column": [
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_6f9de161-5d6a-43a0-a82c-9ab721a6aa10"
+        },
+        {
+            "vertical_lines": [
+                30,
+                86,
+                142,
+                255,
+                317,
+                379,
+                454,
+                529
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date2",
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_4b7bdaa3-8955-40b1-b578-083db6b94b76"
+        }
+    ]
+}

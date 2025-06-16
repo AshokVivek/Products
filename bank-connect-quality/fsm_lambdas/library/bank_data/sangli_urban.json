@@ -1,0 +1,81 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                35,
+                54,
+                218,
+                78
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*No:?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_cd20e098-5a4e-42b4-bad9-2155a0da8bbb"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                33,
+                73,
+                215,
+                90
+            ],
+            "regex": "(?i)(?:\\s*|.*)(.*)\\(.*",
+            "uuid": "name_bbox_10213167-ef30-4aa6-99eb-5600610928f7"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                140,
+                85,
+                450,
+                105
+            ],
+            "regex": "(?i)Address\\s*:?\\s*(.*)",
+            "uuid": "address_bbox_dc06c624-1627-455a-91ca-fa040e0c953e"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                307,
+                44,
+                590,
+                62
+            ],
+            "from_regex": "(?i)(?:\\s*|.*).*Account.*between\\s*([0-9]{2}\\/[0-9]{2}\\/[0-9]{4})\\s*and.*",
+            "to_bbox": [
+                307,
+                44,
+                590,
+                62
+            ],
+            "to_regex": "(?i)(?:\\s*|.*).*Account.*and\\s*([0-9]{2}\\/[0-9]{2}\\/[0-9]{4}).*",
+            "uuid": "date_bbox_d28dce9a-4c16-4120-bfb8-988eaa75285d"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                81,
+                261,
+                334,
+                419,
+                486,
+                539
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance",
+                    "random"
+                ]
+            ],
+            "uuid": "trans_bbox_93b622a0-cead-4aa1-86d6-2996dd3e7b70"
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                75,
+                297,
+                514,
+                445
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*:\\s*([0-9]{11,})\\s*for.*",
+            "uuid": "accnt_bbox_715f4752-8201-419d-a5ae-b4f0101f7563"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                75,
+                297,
+                514,
+                445
+            ],
+            "regex": "(?i)(?:\\s*|.*)Name\\s*:\\s*(.*)",
+            "uuid": "name_bbox_1d8f5125-50e9-4bf4-8a92-bdf625098c21"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                75,
+                297,
+                514,
+                445
+            ],
+            "regex": "(?i).*Address\\s*:\\s*(.*)\\s*of.*",
+            "uuid": "address_bbox_d778ab1d-820a-440d-b0b8-98f41ceec6b0"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                15,
+                118,
+                728,
+                310
+            ],
+            "regex": "(?i).*IFSC\\s*Code\\s*:\\s*([A-Z0-9]{11}).*",
+            "uuid": "ifsc_bbox_467ce18e-89e4-4ca0-9fe5-9ccff4f03224"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                75,
+                297,
+                514,
+                445
+            ],
+            "from_regex": "(?i).*account.*period\\s*:\\s*([0-9]{1,2}-[0-9]{1,2}-[0-9]{2,4})\\s*to.*",
+            "to_bbox": [
+                75,
+                297,
+                514,
+                445
+            ],
+            "to_regex": "(?i).*account.*?to\\s*([0-9]{1,2}-[0-9]{1,2}-[0-9]{2,4}).*",
+            "uuid": "date_bbox_cf65189a-eeab-4b88-be3f-d2150cbb52a9"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": true,
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "amount",
+                    "transaction_type",
+                    "balance",
+                    "transaction_note"
+                ]
+            ],
+            "uuid": "trans_bbox_8fead002-8936-45d0-92d1-16221676344e"
+        }
+    ]
+}

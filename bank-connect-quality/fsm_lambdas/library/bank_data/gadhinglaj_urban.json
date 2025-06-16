@@ -1,0 +1,79 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                7,
+                12,
+                530,
+                160
+            ],
+            "regex": "(?i).*Account\\s*No\\s*:?\\s*([0-9]{8,}).*",
+            "uuid": "accnt_bbox_4c09537a-fffe-401f-9e72-26b8e470a37a"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                7,
+                12,
+                530,
+                160
+            ],
+            "regex": "(?i)[\\s\\S]+Account\\s*Name\\s*:?\\s*([A-Za-z\\-\\.\\,\\/\\s&]+)\\s*\\(",
+            "uuid": "name_bbox_afe230a1-713f-4dc8-966d-b70d376c9df8"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                7,
+                12,
+                950,
+                160
+            ],
+            "from_regex": "(?i)[\\s\\S]+from\\s*date\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{2,4})\\s*to",
+            "to_bbox": [
+                7,
+                12,
+                950,
+                160
+            ],
+            "to_regex": "(?i)[\\s\\S]+to\\s*date\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{2,4})",
+            "uuid": "date_bbox_23790550-900c-4589-ae18-0870a7a4d5b5"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                7,
+                12,
+                530,
+                160
+            ],
+            "regex": "(?i)[\\s\\S]+Address\\s*:\\s*(.*)\\s*prop",
+            "uuid": "address_bbox_0cd8b4e5-7f1e-47b2-a720-e44d3df2fe61"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                78,
+                135,
+                406,
+                536,
+                690
+            ],
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_e8b19503-9e37-48aa-99bc-3a388c25acfd"
+        }
+    ]
+}

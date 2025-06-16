@@ -1,0 +1,27 @@
+{
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                31,
+                80,
+                137,
+                330,
+                402,
+                475,
+                540
+            ],
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_e4cca48b-2e95-4d07-8af6-de9c3d09878b"
+        }
+    ]
+}

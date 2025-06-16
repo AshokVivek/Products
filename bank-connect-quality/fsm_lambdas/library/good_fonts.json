@@ -1,0 +1,847 @@
+{
+    "financial": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "bandhan": [
+        "helvetica-oblique",
+        "times-roman",
+        "times-bold",
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "jantasahakari": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "city_union": [
+        "helvetica",
+        "courier-bold",
+        "courier",
+        "helvetica", 
+        "arialmt"
+    ],
+    "sib": [
+        "helvetica-bold",
+        "helvetica",
+        "arialmt"
+    ],
+    "dbsbnk": [
+        "allandnone",
+        "arialmt",
+        "gotham-book",
+        "gotham-bold,bold",
+        "allandnone",
+        "gotham-book",
+        "gotham-bold,bold",
+        "helvetica-bold",
+        "helvetica",
+        "opensans"
+    ],
+    "saraswat": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "canara": [
+        "times-bold",
+        "times-roman",
+        "helvetica",
+        "helvetica-bold",
+        "helvetica-bold",
+        "helvetica",
+        "helvetica"
+    ],
+    "gp_parsik": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "uco": [
+        "helvetica",
+        "helvetica-bold",
+        "arialunicodems",
+        "times-bold"
+    ],
+    "baroda": [
+        "helvetica-bold",
+        "helvetica",
+        "arialmt",
+        "arial-italicmt",
+        "arial-boldmt",
+        "opensans-bold",
+        "opensans"
+    ],
+    "pnbbnk": [
+        "helvetica",
+        "helvetica-bold",
+        "helvetica",
+        "times-roman",
+        "times-bold",
+        "arialmt",
+        "zapfdingbats"
+    ],
+    "axis": [
+        "helvetica",
+        "times-roman",
+        "times-bold",
+        "helvetica",
+        "times-bold",
+        "times-roman"
+    ],
+    "sbi": [
+        "helvetica",
+        "helvetica-bold",
+        "times-roman",
+        "times-bold"
+    ],
+    "punjab_sind": [
+        "helvetica",
+        "sakalbharati"
+    ],
+    "hdfc": [
+        "times-roman",
+        "times-bold",
+        "couriernew-bold",
+        "couriernew",
+        "times-roman",
+        "arial",
+        "couriernew",
+        "times-roman",
+        "arial"
+    ],
+    "federal": [
+        "helvetica",
+        "helvetica-bold",
+        "times-bold",
+        "times-roman",
+        "inter-bold",
+        "inter-medium",
+        "gilroy-bold",
+        "gilroy-semibold",
+        "dejavusans",
+        "albanyamt,regular",
+        "albanyamt,bold"
+    ],
+    "icici": [
+        "arialmt",
+        "helvetica",
+        "rupeeforadian",
+        "zurichbt-roman",
+        "helvetica",
+        "helvetica",
+        "times-roman",
+        "times-bold",
+        "helvetica",
+        "mulish-regular",
+        "wingdings-regular",
+        "zurichbt-roman,bold",
+        "webdings",
+        "zurichbt-roman",
+        "zurichbt-bold",
+        "helvetica",
+        "zurichbt-roman",
+        "arialmt",
+        "helvetica",
+        "arial-boldmt",
+        "zurichbt-roman,bolditalic"
+    ],
+    "vilas": [
+        "times-bold",
+        "times-roman"
+    ],
+    "akhand_anand": [
+        "couriernew,bold",
+        "couriernew"
+    ],
+    "svcbnk": [
+        "verdana",
+        "verdana-bold",
+        "tahoma",
+        "arial-bold",
+        "times-new-roman-bold",
+        "arial",
+        "times-new-roman"
+    ],
+    "citi": [
+        "helvetica-bold",
+        "helvetica",
+        "helvetica",
+        "times-roman",
+        "times-italic",
+        "times-bold"
+    ],
+    "baroda_gujratbnk": [
+        "opensans-bold",
+        "opensans"
+    ],
+    "bassein": [
+        "times-bold",
+        "times-roman",
+        "lucidaconsole"
+    ],
+    "indusind": [
+        "helvetica-bold",
+        "tahoma",
+        "batangche",
+        "tahoma,bold",
+        "helvetica",
+        "allandnone",
+        "calibri-bold",
+        "wingdings-regular",
+        "calibri",
+        "helvetica",
+        "helvetica-boldoblique",
+        "times-roman",
+        "helvetica-oblique",
+        "helvetica-boldoblique"
+    ],
+    "karur": [
+        "verdana",
+        "helvetica-bold",
+        "verdanabold",
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "kotak": [
+        "helvetica",
+        "arial,bold",
+        "timesnewroman",
+        "arial",
+        "roboto-light",
+        "roboto-regular",
+        "roboto-medium",
+        "roboto-bold",
+        "helvetica-bold",
+        "timesnewroman",
+        "arial",
+        "roboto",
+        "robotolight",
+        "roboto,bold",
+        "robotomedium",
+        "plantagenetcherokee",
+        "courier"       
+    ],
+    "karnataka": [
+        "helvetica-bold",
+        "helvetica",
+        "helvetica",
+        "arialmt",
+        "arial-boldmt",
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "mahabk": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "tamil_mercantile": [
+        "helvetica-bold",
+        "helvetica",
+        "helvetica-oblique"
+    ],
+    "indbnk": [
+        "helvetica",
+        "helvetica",
+        "helvetica-bold",
+        "times-roman",
+        "times-bold",
+        "courier"
+    ],
+    "idbi": [
+        "arialmt",
+        "arial-boldmt",
+        "helvetica",
+        "helvetica-bold",
+        "arial,bold",
+        "helvetica-boldoblique",
+        "times-bold",
+        "arial",
+        "arial narrow"
+    ],
+    "varachha": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "idfc": [
+        "arialmt",
+        "arial-boldmt",
+        "gotham-bold",
+        "gotham-medium",
+        "gotham-book",
+        "gotham-light"
+    ],
+    "dmk_jaoli": [
+        "verdana",
+        "times new roman,bold",
+        "verdana,bold",
+        "times new roman"
+    ],
+    "dcbbnk": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "abhyudaya": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "iob": [
+        "helvetica",
+        "times-roman",
+        "helvetica",
+        "courier",
+        "courier-oblique",
+        "helvetica-bold"
+    ],
+    "ujjivan": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "abhinav_sahakari": [
+        "helvetica"
+    ],
+    "central": [
+        "helvetica"
+    ],
+    "ausfbnk": [
+        "helvetica-bold",
+        "arialmt",
+        "helvetica",
+        "arial-boldmt"
+    ],
+    "ubi": [
+        "times-bold",
+        "times-roman",
+        "arialmt",
+        "arial-boldmt",
+        "calibri-italic",
+        "calibri-bold",
+        "calibri-bolditalic",
+        "calibri"
+    ],
+    "yesbnk": [
+        "arial-bold",
+        "arial",
+        "helvetica",
+        "times-roman",
+        "times-bold",
+        "helvetica-bold"
+    ],
+    "boi": [
+        "helvetica",
+        "times-roman",
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "rbl": [
+        "helvetica",
+        "helvetica-bold",
+        "arialmt",
+        "arial-boldmt",
+        "freeserifbold",
+        "freeserif"
+    ],
+    "airtel": [
+        "helvetica",
+        "helvetica-bold",
+        "helvetica-oblique"
+    ],
+    "paytm": [
+        "opensans-semibold",
+        "opensans",
+        "pingfanghk-regular-propo",
+        "opensans-light",
+        ".pingfang-sc-light",
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "cosmos": [
+        "courier",
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "equitas": [
+        "dejavuserif-bold",
+        "dejavuserif",
+        "times-bold",
+        "times-roman",
+        "calibri-bold",
+        "calibri",
+        "helvetica",
+        "rupeeforadian",
+        "frutigerltstd-roman-iden",
+        "helvetica-bold",
+        "arialmt"
+    ],
+    "jana": [
+        "helvetica",
+        "times-bold",
+        "times-roman",
+        "helvetica-bold",
+        "cidfont+f2",
+        "cidfont+f1"
+    ],
+    "bharatbnk": [
+        "arial narrow,bold",
+        "arial narrow"
+    ],
+    "karnataka_vikas": [
+        "courier-bold",
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "suvarnayug": [
+        "verdana,bold",
+        "verdana",
+        "arial",
+        "arial,bold",
+        "times-bold",
+        "helvetica-oblique",
+        "times-roman"
+    ],
+    "dnsbnk": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "esafbnk": [
+        "times-roman",
+        "helvetica-oblique",
+        "times-bold",
+        "helvetica"
+    ],
+    "fincarebnk": [
+        "times-italic",
+        "helvetica-bold",
+        "helvetica",
+        "times-roman"
+    ],
+    "sutexbnk": [
+        "helvetica",
+        "times-bold",
+        "helvetica-bold"
+    ],
+    "gscb": [
+        "roboto-regular"
+    ],
+    "priyadarshani": [
+        "courier-bold",
+        "courier"
+    ],
+    "utkarshbnk": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "nkgsbbnk": [
+        "helvetica-bold",
+        "helvetica",
+        "arialmt"
+    ],
+    "ahmadabad_district": [
+        "urwdin-bolditalic",
+        "roboto-bold",
+        "roboto-regular"
+    ],
+    "associatebnk": [
+        "helvetica",
+        "helvetica-bold",
+        "cidfont+f1",
+        "cidfont+f2",
+        "calibri"
+    ],
+    "vidya_sahakari": [
+        "verdana",
+        "timesnewromanps-boldmt",
+        "arialmt",
+        "verdana-bold"
+    ],
+    "nesfinbnk": [
+        "helvetica"
+    ],
+    "jivan": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "rajkot": [
+        "helvetica",
+        "helvetica-bold",
+        "arial",
+        "verdana,bold",
+        "arial,bold",
+        "verdana"
+    ],
+    "cnsbnk": [
+        "helvetica"
+    ],
+    "spcb": [
+        "roboto-regular",
+        "roboto-bold",
+        "hyqihei-ees",
+        "helvetica",
+        "unnamed-t3"
+    ],
+    "finobnk": [
+        "timesnewromanpsmt",
+        "timesnewromanps-boldmt",
+        "arialmt",
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "apna_sahakari": [
+        "couriernewpsmt",
+        "helvetica"
+    ],
+    "andhra_pragathi": [
+        "helvetica-bold",
+        "courier-bold",
+        "helvetica"
+    ],
+    "india_post": [
+        "times-roman",
+        "times-bold",
+        "helvetica-bold",
+        "helvetica-oblique",
+        "helvetica",
+        "courier",
+        "cumberlandamt,bold",
+        "cumberlandamt,regular",
+        "courier-bold",
+        "cidfont+f2",
+        "cidfont+f1",
+        "cidfont+f5",
+        "cidfont+f3",
+        "cidfont+f4",
+        "cidfont+f6",
+        "kiran"
+    ],
+    "mahagrambnk": [
+        "helvetica-bold",
+        "courier-bold",
+        "helvetica",
+        "roboto-bold",
+        "roboto-regular",
+        "redsunnregular",
+        "hyqihei-ees",
+        "unnamed-t3",
+        "robotostatic-regular"
+    ],
+    "hsbc": [
+        "ex_cff_arial_unicode_ms",
+        "ex_cff_arial_unicode_msbold",
+        "helvetica",
+        "worldtypeforhsbc",
+        "arial-boldmt",
+        "arialmt",
+        "timesnewromanpsmt",
+        ".sfns-regular_wdth_opsz1"
+    ],
+    "pune_district": [
+        "arial",
+        "arial-bold"
+    ],
+    "sbmbank": [
+        "dejavusans-bold",
+        "dejavusans"
+    ],
+    "jnkbnk": [
+        "arialmt",
+        "cidfont+f1",
+        "calibri,bold",
+        "calibri",
+        "arial",
+        "arial,bold",
+        "unnamed-t3",
+        "roboto-regular",
+        "roboto-thin",
+        "robotostatic-regular"
+    ],
+    "sarvodaya_sahakari": [
+        "arial",
+        "arial,bold"
+    ],
+    "suratbnk": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "citizen_credit": [
+        "arial",
+        "helvetica",
+        "helvetica-bold",
+        "verdana,bold",
+        "verdana"
+    ],
+    "baramati": [
+        "verdana",
+        "arial,bold",
+        "arial",
+        "verdana,bold"
+    ],
+    "gsmahanagar": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "kalupurbnk": [
+        "helvetica",
+        "helvetica-bold",
+        "arialmt"
+    ],
+    "telangana": [
+        "helvetica",
+        "courier-bold",
+        "helvetica-bold"
+    ],
+    "sncb": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "shiveshwar_sahakari": [
+        "helvetica",
+        "times-bold",
+        "helvetica-bold"
+    ],
+    "mehsana_urban": [
+        "courier"
+    ],
+    "samarth_sahakari": [
+        "helvetica-bold",
+        "helvetica",
+        "itcavantgardegothic",
+        "courier-bold"
+    ],
+    "apgvbnk": [
+        "helvetica-bold",
+        "helvetica",
+        "courier-bold",
+        "courier"
+    ],
+    "kaijsb": [
+        "times-bold",
+        "helvetica",
+        "times-roman"
+    ],
+    "dhanlaxmi": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "pune_people": [
+        "arial",
+        "arial-bold",
+        "times-roman",
+        "helvetica",
+        "times-bold"
+    ],
+    "municipalbnk": [
+        "courier-bold",
+        "helvetica",
+        "courier",
+        "helvetica-bold"
+    ],
+    "malad": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "andhra": [
+        "times-bold",
+        "times-roman"
+    ],
+    "saurashtra": [
+        "helvetica",
+        "courier-bold",
+        "courier",
+        "helvetica-bold"
+    ],
+    "jalgaon_sahkari": [
+        "cidfont+f1"
+    ],
+    "suryodaybnk": [
+        "helvetica-oblique",
+        "times-bold",
+        "times-roman",
+        "helvetica"
+    ],
+    "csbbnk": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "shinhan": [
+        "arial",
+        "nanumgothic",
+        "tahoma"
+    ],
+    "crsucbnk": [
+        "cordiaupc",
+        "helvetica",
+        "couriernewpsmt"
+    ],
+    "laxmi_urban": [
+        "courier-bold",
+        "courier"
+    ],
+    "ncb": [
+        "arialregular",
+        "cairobold",
+        "arialbold",
+        "cairoregular"
+    ],
+    "rmgbbnk": [
+        "helvetica",
+        "helvetica-bold",
+        "courier-bold",
+        "courier"
+    ],
+    "mumbai_district": [
+        "arial",
+        "arial-bold"
+    ],
+    "rsbbnk": [
+        "courier",
+        "cambria,bold",
+        "cambria"
+    ],
+    "ahmedabad_mercantile": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "rmgbbbnk": [
+        "unnamed-t3"
+    ],
+    "sarvodaya": [
+        "times-bold",
+        "helvetica-oblique",
+        "times-roman"
+    ],
+    "adarsh": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "nutan_sahakari": [
+        "times-bold",
+        "times-roman",
+        "courier-bold",
+        "courier",
+        "ms linedraw"
+    ],
+    "vsbbnk": [
+        "verdana",
+        "arial",
+        "arial,bold",
+        "verdana,bold"
+    ],
+    "primebnk": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "model": [
+        "helvetica-bold",
+        "helvetica",
+        "cambria,bold",
+        "cambria"
+    ],
+    "karnataka_gramin": [
+        "arialunicodems",
+        "arial-boldmt",
+        "arialmt"
+    ],
+    "arihantbnk": [
+        "liberationsans-italic",
+        "carlito",
+        "centuryschoolbookl",
+        "liberationsans-bolditali",
+        "carlito-bold",
+        "liberationsans"
+    ],
+    "janaseva": [
+        "verdana,bold",
+        "verdana",
+        "arial,bold",
+        "arial"
+    ],
+    "tscabbnk": [
+        "times-bold",
+        "helvetica",
+        "times-roman"
+    ],
+    "allahabad": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "bnsbnk": [
+        "courier",
+        "courier-bold"
+    ],
+    "chhattisgarh": [
+        "helvetica",
+        "helvetica-bold",
+        "courier-bold"
+    ],
+    "thane_bharat": [
+        "arial",
+        "verdana",
+        "arial,bold",
+        "verdana,bold"
+    ],
+    "banas": [
+        "courier-bold",
+        "helvetica-bold",
+        "courier",
+        "helvetica"
+    ],
+    "kalyan": [
+        "times-roman",
+        "helvetica",
+        "times-bold"
+    ],
+    "newindia": [
+        "helvetica-bold",
+        "helvetica",
+        "roboto-bold",
+        "roboto-regular"
+    ],
+    "vasai": [
+        "courier-bold",
+        "courier",
+        "ms linedraw"
+    ],
+    "jalgaon": [
+        "helvetica"
+    ],
+    "kukarwada_nagrik": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "shivalik": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "karnavati": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "arvind_sahakari": [
+        "helvetica-bold",
+        "helvetica"
+    ],
+    "surat_mercantile": [
+        "helvetica",
+        "times-bold"
+    ],
+    "greaterbnk": [
+        "helvetica-bold",
+        "courier-bold",
+        "helvetica"
+    ],
+    "bharati_sahakari": [
+        "courier",
+        "courier-bold"
+    ],
+    "ambajogai_peoples": [
+        "helvetica",
+        "helvetica-bold"
+    ],
+    "jana_sahakari": [
+        "helvetica"
+    ],
+    "vaishya": [
+        "verdana",
+        "arial,bold",
+        "arial",
+        "verdana,bold"
+    ]
+}

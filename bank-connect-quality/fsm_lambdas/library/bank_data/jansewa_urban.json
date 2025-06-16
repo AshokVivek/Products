@@ -1,0 +1,30 @@
+{
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                384,
+                460,
+                518,
+                576,
+                624,
+                854,
+                871,
+                923
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "balance",
+                    "credit",
+                    "debit",
+                    "chq_num",
+                    "transaction_note",
+                    "random",
+                    "date"
+                ]
+            ],
+            "is_rotated": true,
+            "uuid": "trans_bbox_eb930b80-ede8-4288-b96d-11989b98ec3f"
+        }
+    ]
+}

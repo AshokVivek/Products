@@ -1,0 +1,132 @@
+version: '3.9'
+
+services:
+  bank_connect_quality:
+    build: .
+    ports:
+      - 8000:8000
+    environment:
+      - STAGE=uat
+      - AWS_REGION=ap-south-1
+    image: bank_connect_quality
+    restart: unless-stopped
+    depends_on:
+      - redis
+    networks:
+      - bank_connect_quality_net
+    logging:
+      driver: "awslogs"
+      options:
+          awslogs-region: "ap-south-1"
+          awslogs-group: "bank-connect-quality-apis-logs-uat"
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    restart: always
+    command: ["--maxmemory", "400mb", "--maxmemory-policy", "allkeys-lru"]
+    networks:
+      - bank_connect_quality_net
+  
+  kafka-ui:
+    container_name: kafka_ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 8080:8080
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=bank-connect-kafka-uat
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=b-3.bankconnectkafkauat.a2dr4v.c2.kafka.ap-south-1.amazonaws.com:9094,b-2.bankconnectkafkauat.a2dr4v.c2.kafka.ap-south-1.amazonaws.com:9094,b-1.bankconnectkafkauat.a2dr4v.c2.kafka.ap-south-1.amazonaws.com:9094
+      - KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SSL
+
+  # inconsistency_solving_kafka_consumers:
+  #   container_name: inconsistency_solving_kafka_consumers
+  #   build:
+  #     context: .
+  #     dockerfile: bank_connect_kafka_consumers/Dockerfile.kafka.quality
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '0.5'  # Maximum 50% of a CPU core
+  #         memory: 512M  # Maximum 512MB of RAM
+  #       reservations:
+  #         cpus: '0.25'  # Ensure at least 25% of a CPU core is available
+  #         memory: 256M
+  #   environment:
+  #     - STAGE=dev
+  #     - AWS_REGION=ap-south-1
+  #     - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+  #     - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+  #     - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+  #     - TOPIC_NAME=inconsistency-solve
+  #     - NUMBER_OF_WORKERS=2
+  #     - NUMBER_OF_THREADS=2
+  #     - GROUP_ID=inconsistency-solvers
+  #     - CONSUMER_FUNCTION_NAME=inconsistency_solve_consumer
+  #     - MAX_POLL_INTERVAL_IN_MILLISECONDS=10000
+  #     - IS_BATCH_CONSUMPTION_ENABLED=false
+  #     - MESSAGE_CONSUMPTION_BATCH_SIZE=1
+
+
+  # quality_events_kafka_consumer:
+  #   container_name: quality_events_kafka_consumers
+  #   build:
+  #     context: .
+  #     dockerfile: bank_connect_kafka_consumers/Dockerfile.kafka.quality
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '0.75'  # Maximum 75% of a CPU core
+  #         memory: 1024M  # Maximum 1024MB of RAM
+  #       reservations:
+  #         cpus: '0.25'  # Ensure at least 25% of a CPU core is available
+  #         memory: 256M
+  #   networks:
+  #     - bank_connect_quality_net
+  #   environment:
+  #     - STAGE=uat
+  #     - AWS_REGION=ap-south-1
+  #     - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+  #     - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+  #     - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+  #     - TOPIC_NAME=bank-connect-quality-events
+  #     - NUMBER_OF_WORKERS=2
+  #     - NUMBER_OF_THREADS=2
+  #     - GROUP_ID=quality-events-consumers
+  #     - CONSUMER_FUNCTION_NAME=quality_events_consumer
+  #     - IS_BATCH_CONSUMPTION_ENABLED=true
+  #     - MESSAGE_CONSUMPTION_BATCH_SIZE=10
+  #     - MAX_POLL_INTERVAL_IN_MILLISECONDS=10000
+  
+  statement_level_inconsistency_consumer:
+    container_name: statement_level_inconsistency_consumer
+    build:
+      context: .
+      dockerfile: bank_connect_kafka_consumers/Dockerfile.kafka.quality
+    deploy:
+      resources:
+        limits:
+          cpus: '0.75'  # Maximum 75% of a CPU core
+          memory: 512M  # Maximum 512MB of RAM
+        reservations:
+          cpus: '0.15'  # Ensure at least 15% of a CPU core is available
+          memory: 128M
+    networks:
+      - bank_connect_quality_net
+    environment:
+      - STAGE=uat
+      - AWS_REGION=ap-south-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+      - TOPIC_NAME=statement_level_inconsistency
+      - NUMBER_OF_WORKERS=1
+      - NUMBER_OF_THREADS=1
+      - GROUP_ID=statement_level_inconsistency_group_id_quality
+      - CONSUMER_FUNCTION_NAME=statement_level_inconsistency
+      - IS_BATCH_CONSUMPTION_ENABLED=true
+      - MESSAGE_CONSUMPTION_BATCH_SIZE=10
+      - MAX_POLL_INTERVAL_IN_MILLISECONDS=10000
+
+networks:
+    bank_connect_quality_net:

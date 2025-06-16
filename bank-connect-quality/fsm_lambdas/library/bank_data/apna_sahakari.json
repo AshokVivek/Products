@@ -1,0 +1,101 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                8,
+                140,
+                310,
+                160
+            ],
+            "regex": "(?i)(?:\\s*|.*)CBS\\s*Account\\s*No\\s*:-?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_cf9feaaa-271b-4f38-8838-5c16f3d9c5ca"
+        },
+        {
+            "bbox": [
+                10,
+                76,
+                202,
+                152
+            ],
+            "regex": "(?i).*Account\\s*:?\\s*([A-Za-z0-9\\/]{7,}).*",
+            "uuid": "accnt_bbox_d9ab0313-9092-42d0-bf51-8adbc932b247"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                210,
+                110,
+                500,
+                140
+            ],
+            "regex": "(?i)(?:\\s*|.*)Name\\s*:?\\s*(.*).*",
+            "uuid": "name_bbox_b3708bd6-2801-455a-875c-024ac47a5245"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                8,
+                160,
+                540,
+                190
+            ],
+            "regex": "(?i)(?:\\s*|.*)Address\\s*:?\\s*(.*).*",
+            "uuid": "address_bbox_ef5dd368-9af8-45c9-ad1d-421c3c2eaa76"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                8,
+                200,
+                210,
+                220
+            ],
+            "regex": "(?i).*IFSC\\s*Code\\s*:?\\s*([A-Z]{4}[0-9]{7}).*",
+            "uuid": "ifsc_bbox_1aec2fcb-54e0-4674-87d8-d8506a7952bd"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                9,
+                180,
+                195,
+                205
+            ],
+            "from_regex": "(?i)(?:\\s*|.*)From\\s*Date\\s*:?\\s*([0-9]{2}\\/[0-9A-Za-z]{2,4}\\/[0-9]{4}).*",
+            "to_bbox": [
+                210,
+                180,
+                470,
+                205
+            ],
+            "to_regex": "(?i)(?:\\s*|.*)To\\s*Date\\s*:?([0-9]{2}\\/[0-9A-Za-z]{2,4}\\/[0-9]{4}).*",
+            "uuid": "date_bbox_f5b035fc-64b7-4266-9ba2-922824b91e63"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                75,
+                232,
+                312,
+                393,
+                468
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "random",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_23ad3ff6-45b1-4367-97b8-c7fe9a9eb4a2"
+        }
+    ]
+}

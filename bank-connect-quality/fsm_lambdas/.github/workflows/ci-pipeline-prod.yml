@@ -1,0 +1,19 @@
+name: PROD - Docker Build and Infrastructure Update
+
+on:
+  push:
+    branches: ["develop"]
+
+jobs:
+  build-and-run:
+    runs-on: [self-hosted, prod-runner]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and deploy to infra
+        run: |
+          chmod +x ./scripts/create_k8s_deployment_pr.sh
+          ./scripts/create_k8s_deployment_pr.sh prod github_action
+      

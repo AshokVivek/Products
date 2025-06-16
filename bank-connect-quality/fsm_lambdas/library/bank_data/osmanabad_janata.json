@@ -1,0 +1,39 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                11,
+                113,
+                210,
+                160
+            ],
+            "regex": "(?i).*Account\\s*No.\\s*:?\\s*([0-9]{8,}).*",
+            "uuid": "accnt_bbox_c737c064-16c7-4078-b1c7-24034c438c1e"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                25,
+                85,
+                255,
+                314,
+                400,
+                484,
+                569
+            ],
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_cd1489e2-4e28-4704-80ca-bc3507cca7b2"
+        }
+    ]
+}

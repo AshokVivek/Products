@@ -1,0 +1,78 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                8,
+                82,
+                582,
+                150
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*Number\\s*([0-9]*)\\s*Between.*",
+            "uuid": "accnt_bbox_731b6d85-300b-4b4b-bcaf-d3dfaf53937d"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                70,
+                82,
+                582,
+                155
+            ],
+            "from_regex": "(?i)(?:\\s*|.*)Between([0-9]{2}\\-[0-9]{2}\\-[0-9]{4}).*",
+            "to_bbox": [
+                70,
+                82,
+                582,
+                155
+            ],
+            "to_regex": "(?i)(?:\\s*|.*)Between(?:[0-9]{2}\\-[0-9]{2}\\-[0-9]{4})\\s*and([0-9]{2}\\-[0-9]{2}\\-[0-9]{4}).*",
+            "uuid": "date_bbox_ac9b5e92-7400-413d-b833-e00a26e181e1"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                16,
+                185,
+                310,
+                235
+            ],
+            "regex": "(?i)\\s*([A-Za-z\\s\\n]+).*",
+            "uuid": "name_bbox_b365b616-8631-4cb1-bee4-7ac09ef3d1e7"
+        },
+        {
+            "bbox": [
+                30,
+                196,
+                290,
+                235
+            ],
+            "regex": "(?i)(.*)",
+            "uuid": "name_bbox_ac90cf2e-788b-4ac4-8ccb-3ef4d01b9a1f"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                45,
+                106,
+                322,
+                414,
+                500,
+                571
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_8dc54a68-47c5-409f-905f-ba767a4e81d4"
+        }
+    ]
+}

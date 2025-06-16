@@ -1,0 +1,99 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                261,
+                60,
+                320,
+                170
+            ],
+            "regex": "(?i)([0-9]{7,}).*",
+            "uuid": "accnt_bbox_c8dd33be-60c1-4568-8436-7deaa7bb9615"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                25,
+                60,
+                470,
+                160
+            ],
+            "regex": "(?i)([A-Za-z ]+)\\s*\n.*",
+            "uuid": "name_bbox_f7a6ecb4-0f23-409d-89b5-12c808bee26c"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                16,
+                59,
+                270,
+                140
+            ],
+            "regex": "(?i)([A-Za-z0-9,\\s\\n]+).*",
+            "uuid": "address_bbox_7a41314d-969a-40d6-87fa-5e33e75c85bf"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                45,
+                108,
+                287,
+                370,
+                461,
+                557
+            ],
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "special_symbol": true,
+            "uuid": "trans_bbox_4f6e1aa7-4b19-42fe-a282-ae08ce8f4163"
+        },
+        {
+            "vertical_lines": [
+                45,
+                108,
+                287,
+                370,
+                461,
+                557
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "special_symbol": true,
+            "uuid": "trans_bbox_3214527e-a5ea-490f-8d1d-a1b7c3a064f5"
+        },
+        {
+            "vertical_lines": true,
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "special_symbol": true,
+            "uuid": "trans_bbox_f525949a-e6a5-4988-b8fa-78ede3a2d33b"
+        }
+    ]
+}

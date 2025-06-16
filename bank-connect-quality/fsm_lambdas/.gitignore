@@ -1,0 +1,17 @@
+.DS_Store
+.idea/
+*.iml
+node_modules/
+.serverless/
+venv/
+venv-ray/
+package-lock.json
+*.pyc
+.vscode
+*.ruff_cache
+__pycache__
+.venv
+.coverage
+*build/
+*dist/
+*.prof

@@ -1,0 +1,79 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                15,
+                114,
+                250,
+                182
+            ],
+            "regex": "(?i).*No.\\s*Rekening\\s*:?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_ecc02718-4c32-441e-af7f-f1871218e58c"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                28,
+                51,
+                387,
+                116
+            ],
+            "from_regex": "(?i)[\\s\\S]+periode\\s*tgl\\s*:?\\s*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "to_bbox": [
+                28,
+                51,
+                387,
+                116
+            ],
+            "to_regex": "(?i)[\\s\\S]+S/D\\s*:?\\s*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "uuid": "date_bbox_6ea8f7e0-04c6-4d27-bc90-f7d23444eb73"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                240,
+                113,
+                580,
+                181
+            ],
+            "regex": "(?i).*kepada\\s*yth\\s*:\\s*(.*)",
+            "uuid": "name_bbox_b2999c5b-ce90-42f0-a015-526b346cee1a"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                240,
+                113,
+                580,
+                181
+            ],
+            "regex": "(?i).*kepada\\s*yth\\s*:\\s*(.*)",
+            "uuid": "address_bbox_0884394d-5750-43d5-b4bb-57646deb84e9"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                86,
+                154,
+                380,
+                381,
+                467
+            ],
+            "column": [
+                [
+                    "date",
+                    "randon",
+                    "transaction_note",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_0d85d166-49a6-4415-802d-7499470f3b8e"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                42,
+                133,
+                517,
+                152
+            ],
+            "regex": "(?i)\\s*Statement.*No\\s*:\\s*([0-9]+)\\s*for.*",
+            "uuid": "accnt_bbox_c72ddab8-619a-44fd-926e-d750edf1dc0b"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                42,
+                133,
+                517,
+                152
+            ],
+            "from_regex": "(?i)\\s*Statement.*period\\s*:\\s*([0-9]{2}\\/[0-9]{2}\\/[0-9]{4})to.*",
+            "to_bbox": [
+                42,
+                133,
+                517,
+                152
+            ],
+            "to_regex": "(?i)\\s*Statement.*to\\s*([0-9]{2}\\/[0-9]{2}\\/[0-9]{4}).*",
+            "uuid": "date_bbox_43aef5c4-dbb7-4a54-bb0f-3f0e557970a8"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                6,
+                67,
+                195,
+                87
+            ],
+            "regex": "(?i)([A-Za-z\\s]+)\\s*\\[.*",
+            "uuid": "name_bbox_1d777f8b-6fae-49aa-bfa7-832166a18f3c"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                5,
+                83,
+                175,
+                130
+            ],
+            "regex": "(?i)(.*)",
+            "uuid": "address_bbox_1b271297-a6d1-4436-8974-f2d0c885634d"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                350,
+                185,
+                560,
+                205
+            ],
+            "regex": "(?i).*IFSC\\s*Code\\s*([A-Z0-9]+).*",
+            "uuid": "ifsc_bbox_01166a31-e939-4721-9a12-6df9aa92808f"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": true,
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance",
+                    "random"
+                ]
+            ],
+            "uuid": "trans_bbox_9a678c37-c030-40e1-8634-b07991678d12"
+        }
+    ]
+}

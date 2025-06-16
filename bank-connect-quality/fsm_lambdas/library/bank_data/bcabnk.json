@@ -1,0 +1,78 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                317,
+                93,
+                571,
+                155
+            ],
+            "regex": "(?i).*No.\\s*Rekening\\s*:?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_fca45a31-a4c6-4a7d-9956-e9f0bab7804d"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                317,
+                93,
+                572,
+                156
+            ],
+            "from_regex": "(?i)[\\s\\S]+periode\\s*:?\\s*([a-z]+\\s*[0-9]{4}).*",
+            "to_bbox": [
+                317,
+                93,
+                572,
+                156
+            ],
+            "to_regex": "(?i)[\\s\\S]+periode\\s*:?\\s*([a-z]+\\s*[0-9]{4}).*",
+            "uuid": "date_bbox_14771323-1a24-4fc4-8134-babfb94871b8"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                21,
+                93,
+                275,
+                183
+            ],
+            "regex": "(?i)(.*)\\n[\\s\\S]+catatan.*",
+            "uuid": "name_bbox_6b5665a3-2066-4070-9ccb-a9f70805ab33"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                21,
+                93,
+                275,
+                183
+            ],
+            "regex": "(?i)(.*)\\s*catatan.*",
+            "uuid": "address_bbox_32c04080-e412-4644-965b-2e7f19a8954c"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                87,
+                299,
+                337,
+                454
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "random",
+                    "amount",
+                    "balance"
+                ]
+            ],
+            "merge_balance": true,
+            "uuid": "trans_bbox_f2be036b-9313-41dc-8128-7363eccf6a26"
+        }
+    ]
+}

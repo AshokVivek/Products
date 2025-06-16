@@ -1,0 +1,51 @@
+{
+    "axis": [
+        "Standard V2 R3 128-bit RC4"
+    ],
+    "baroda": [
+        "Standard V2 R3 128-bit RC4",
+        "Standard V1 R2 40-bit RC4",
+        "Standard V4 R4 128-bit AES"
+    ],
+    "boi": [
+        "Standard V4 R4 128-bit AES",
+        "Standard V1 R3 40-bit RC4"
+    ],
+    "canara": [
+        "Standard V1 R2 40-bit RC4"
+    ],
+    "hdfc": [
+        "Standard V1 R2 40-bit RC4",
+        "Standard V2 R3 128-bit RC4"
+    ],
+    "icici": [
+        "Standard V2 R3 128-bit RC4",
+        "Standard V4 R4 128-bit AES",
+        "Standard V5 R5 256-bit AES"
+    ],
+    "idbi": [
+        "Standard V2 R3 128-bit RC4"
+    ],
+    "indbnk": [
+        "Standard V2 R3 128-bit RC4"
+    ],
+    "kotak": [
+        "Standard V2 R3 128-bit RC4",
+        "Standard V5 R6 256-bit AES"
+    ],
+    "paytm": [
+        "Standard V4 R4 128-bit AES"
+    ],
+    "pnbbnk": [
+        "Standard V4 R4 128-bit None",
+        "Standard V2 R3 128-bit RC4"
+    ],
+    "sbi": [
+        "Standard V4 R4 128-bit AES",
+        "Standard V2 R3 128-bit RC4"
+    ],
+    "ubi": [
+        "Standard V2 R3 128-bit RC4",
+        "Standard V5 R5 256-bit AES"
+    ]
+}

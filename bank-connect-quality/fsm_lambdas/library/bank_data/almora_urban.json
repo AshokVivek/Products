@@ -1,0 +1,79 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                21,
+                181,
+                441,
+                302
+            ],
+            "regex": "(?i).*Account\\s*No\\s*:?\\s*([0-9]{8,}).*",
+            "uuid": "accnt_bbox_f1e35158-8dca-46f3-8eb9-2f15873ea80c"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                420,
+                222,
+                800,
+                315
+            ],
+            "from_regex": "(?i).*opening\\s*balance.*on\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{2,4}).*total.*",
+            "to_bbox": [
+                420,
+                222,
+                800,
+                315
+            ],
+            "to_regex": "(?i).*total.*on\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{2,4})\\s*:?.*",
+            "uuid": "date_bbox_690d505c-c4c7-4ed0-b283-46978be97149"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                21,
+                181,
+                441,
+                302
+            ],
+            "regex": "(?i)[\\s\\S]+name\\s*:?\\s*([A-Za-z\\s\\-\\/\\.]+)\\s*sanc.*",
+            "uuid": "name_bbox_84710ef9-2584-4da8-96c2-2c53d8d110d2"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                21,
+                181,
+                441,
+                302
+            ],
+            "regex": "(?i).*IFSC\\s*Code\\s*:?\\s*([A-Z0-9]{11}).*",
+            "uuid": "ifsc_bbox_b4df35d0-49bc-4e84-9b1e-9542656d82bd"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                145,
+                505,
+                593,
+                670,
+                762
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "random",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_5e1a9a7d-b8a1-45b2-b89a-b321bc9200fa"
+        }
+    ]
+}

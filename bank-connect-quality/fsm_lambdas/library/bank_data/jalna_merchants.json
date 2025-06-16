@@ -1,0 +1,88 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                10,
+                54,
+                577,
+                161
+            ],
+            "regex": "(?i)(?:\\s*|.*)Statement\\s*of\\s*Account\\s*No\\s*:?\\s*([0-9X]+)\\s*for.*",
+            "uuid": "accnt_bbox_6581a567-b7af-4385-b198-e0527e833bff"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                10,
+                54,
+                577,
+                161
+            ],
+            "regex": "(?i)\\s*(.*)\\s*\\[UCIC.*",
+            "uuid": "name_bbox_9d97b39f-b1c5-4715-984e-ed1acafc1419"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                10,
+                54,
+                577,
+                161
+            ],
+            "regex": "(?i).*IFSC\\s*:?\\s*(?:[A-Z0-9]{11})\\s*(.*)\\s*statement",
+            "uuid": "address_bbox_c455be0b-2314-4348-9bc0-ee9b993cee6a"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                10,
+                54,
+                577,
+                161
+            ],
+            "regex": "(?i).*IFSC\\s*:?\\s*([A-Z0-9]{11}).*",
+            "uuid": "ifsc_bbox_20ba91c1-e3ca-4617-8607-52dcf8329569"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                10,
+                54,
+                577,
+                161
+            ],
+            "from_regex": "(?i).*Statement\\s*of\\s*Account\\s*No.*period\\s*:?\\s*([0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})\\s*to.*",
+            "to_bbox": [
+                10,
+                54,
+                577,
+                161
+            ],
+            "to_regex": "(?i).*Statement\\s*of\\s*Account\\s*No.*period.*to\\s*([0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4}).*",
+            "uuid": "date_bbox_fa65518b-acaa-4f78-9a29-bf1b3b3cd206"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": true,
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance",
+                    "random2"
+                ]
+            ],
+            "uuid": "trans_bbox_196d455b-7c41-4c2f-a552-31479f00a2ca"
+        }
+    ]
+}

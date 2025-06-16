@@ -1,0 +1,79 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                238,
+                97,
+                437,
+                236
+            ],
+            "regex": "(?i).*account\\s*number\\s*:?\\s*([0-9]{11,}).*",
+            "uuid": "accnt_bbox_b870fe5b-9231-4086-9bc5-6d3492ba8c4a"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                238,
+                97,
+                437,
+                236
+            ],
+            "from_regex": "(?i).*from\\s*date\\s*:?\\s*([0-9]{1,2}/[0-9]{2}/[0-9]{2,4}).*",
+            "to_bbox": [
+                238,
+                97,
+                437,
+                236
+            ],
+            "to_regex": "(?i).*to\\s*date\\s*:?\\s*([0-9]{1,2}/[0-9]{2}/[0-9]{2,4}).*",
+            "uuid": "date_bbox_8c924cc6-fee2-4186-ae3c-5f449fb1063a"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                13,
+                156,
+                213,
+                269
+            ],
+            "regex": "(?i)(.*)\\n[\\s\\S]+trans.*",
+            "uuid": "name_bbox_69008f8e-5082-46c4-83ae-00f143647610"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                13,
+                156,
+                213,
+                269
+            ],
+            "regex": "(?i)(.*?)\\s*trans.*",
+            "uuid": "address_bbox_0d7d8c15-476d-476f-81bd-9c046cd66918"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                55,
+                249,
+                299,
+                376,
+                476
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "random",
+                    "chq_num",
+                    "amount",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_b42e721a-7478-46b1-b934-65772c278e97"
+        }
+    ]
+}

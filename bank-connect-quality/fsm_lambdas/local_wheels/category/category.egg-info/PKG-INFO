@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: category
+Version: 0.0.1
+Summary: Generates Single Category Classification
+Home-page: https://github.com/finbox-in/fsm-lambdas
+Author: Siddhant Tiwary
+Author-email: siddhant.tiwary@finbox.in
+Requires-Dist: pandas==2.2.1

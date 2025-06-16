@@ -1,0 +1,98 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                295,
+                165,
+                834,
+                315
+            ],
+            "regex": "(?i).*ac\\s*no\\s*:*\\s*([0-9]{8,})ifsc.*",
+            "uuid": "accnt_bbox_24f7db6a-68ce-411a-b382-a89b46bd17c6"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                302,
+                77,
+                656,
+                305
+            ],
+            "from_regex": "(?i).*from\\s*date\\s*:\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{1,4})to.*",
+            "to_bbox": [
+                302,
+                77,
+                656,
+                305
+            ],
+            "to_regex": "(?i).*to\\s*:\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{1,4}).*",
+            "uuid": "date_bbox_387550f7-cf2f-4aac-a396-a1521be6f3ab"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                5,
+                78,
+                303,
+                301
+            ],
+            "regex": "(?i)([a-z\\s\\-\\./]+)\\s*\n",
+            "uuid": "name_bbox_57c1ccdd-ca73-423a-ac38-1520fbb08947"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                295,
+                165,
+                834,
+                315
+            ],
+            "regex": "(?i).*ifsc\\s*code\\s*:\\s*([A-Z0-9]{11}).*",
+            "uuid": "ifsc_bbox_3f356750-a58e-43ad-93bd-b6e33eeb8ae5"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                5,
+                78,
+                303,
+                301
+            ],
+            "regex": "(?i)([\\s\\S]+)\\s*mobile",
+            "uuid": "address_bbox_d733d51e-8e34-42fb-92dd-80ac1d09ab24"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                4,
+                69,
+                147,
+                252,
+                287,
+                373,
+                470,
+                568,
+                667
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "random1",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_b0f592bf-16ec-4044-aa4c-439c27a90959"
+        }
+    ]
+}

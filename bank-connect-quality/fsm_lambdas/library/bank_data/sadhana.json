@@ -1,0 +1,156 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                70,
+                790,
+                85,
+                930
+            ],
+            "regex": "(?i)(?:\\s*|.*)A/c\\s*No\\s*:.?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_f43f4a05-df18-49f7-bc49-9b51475400db"
+        },
+        {
+            "bbox": [
+                7,
+                139,
+                232,
+                156
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*Number\\s*:?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_65d7d5ee-e7b4-496c-ba42-f12691f1fd77"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                70,
+                660,
+                85,
+                800
+            ],
+            "regex": "(?i)(?:\\s*|.*)A/C\\s*Name\\s*:?\\s*(.*).*",
+            "uuid": "name_bbox_7a9c2d76-0866-4b98-b19a-036c7f0bbfa4"
+        },
+        {
+            "bbox": [
+                8,
+                151,
+                266,
+                167
+            ],
+            "regex": "(?i)(?:\\s*|.*)Customer\\s*Name\\s*:?\\s*(.*).*",
+            "uuid": "name_bbox_5c6dd893-a1b1-4980-bbbc-8eba944ba5b0"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                9,
+                226,
+                277,
+                245
+            ],
+            "regex": "(?i)\\s*Address\\s*:\\s*(.*)",
+            "uuid": "address_bbox_f807421b-409f-4dc8-9209-dc3a68b401d8"
+        },
+        {
+            "bbox": [
+                139,
+                120,
+                289,
+                164
+            ],
+            "regex": "(?i)\\s*(.*)",
+            "uuid": "address_bbox_1c11d297-3391-4f87-8fa8-d90696a70125"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                8,
+                124,
+                409,
+                143
+            ],
+            "from_regex": "(?i)(?:\\s*|.*)From\\s*Date\\s*:\\s*([0-9]{2}\\-[A-Z]{3}\\-[0-9]{4})\\s*To.*",
+            "to_bbox": [
+                8,
+                124,
+                409,
+                143
+            ],
+            "to_regex": "(?i)(?:\\s*|.*)From.*Date\\s*:\\s*([0-9]{2}\\-[A-Z]{3}\\-[0-9]{4}).*",
+            "uuid": "date_bbox_9a1a06f1-837b-467a-9a7d-5c4697996e50"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": true,
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_9a633dbe-5955-41c9-a2d5-3af06e80cf9f"
+        },
+        {
+            "vertical_lines": [
+                75,
+                137,
+                225,
+                291,
+                339,
+                381,
+                442,
+                511
+            ],
+            "column": [
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "chq_num",
+                    "random",
+                    "random2",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_068618e5-639e-4085-9047-a7a5a66de57d"
+        },
+        {
+            "vertical_lines": [
+                372,
+                455,
+                520,
+                577,
+                617,
+                852,
+                872,
+                926
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "balance",
+                    "credit",
+                    "debit",
+                    "chq_num",
+                    "transaction_note",
+                    "random",
+                    "date"
+                ]
+            ],
+            "is_rotated": true,
+            "uuid": "trans_bbox_df7eeb1e-932a-49a0-9169-3b9b4c185446"
+        }
+    ]
+}

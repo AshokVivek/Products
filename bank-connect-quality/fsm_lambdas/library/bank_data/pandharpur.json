@@ -1,0 +1,70 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                380,
+                49,
+                562,
+                66
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*No\\s*:\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_2c0492aa-edc3-4446-84a7-be72ba3af6c3"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                45,
+                46,
+                190,
+                63
+            ],
+            "regex": "(?i)([A-Za-z\\s.]+).*",
+            "uuid": "name_bbox_f3ec6acf-dcf3-4897-9a00-1b1a43efb23b"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                219,
+                36,
+                388,
+                53
+            ],
+            "from_regex": "(?i)(?:\\s*|.*)From\\s*([0-9]{2}\\/[0-9A-Za-z]{2,4}\\/[0-9]{4})\\s*To.*",
+            "to_bbox": [
+                219,
+                36,
+                388,
+                53
+            ],
+            "to_regex": "(?i)(?:\\s*|.*)From.*To\\s*([0-9]{2}\\/[0-9A-Za-z]{2,4}\\/[0-9]{4}).*",
+            "uuid": "date_bbox_0e484142-048f-4e5e-b732-ba7cc53e6555"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                51,
+                104,
+                266,
+                327,
+                399,
+                485,
+                558
+            ],
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_4e1356ac-5b3c-4cec-962a-5e332d9fc2e5"
+        }
+    ]
+}

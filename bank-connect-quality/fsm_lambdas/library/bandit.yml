@@ -1,0 +1,25 @@
+# exluding all directories, recursive or direct, which contain "venv" as a substring
+exclude_dirs: ['**/*venv*/**']
+
+# Suppressing the following Bandit vulnerabilities:
+# Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: '' (Low severity)
+# this is an invalid category since empty string is not a hardcoded password
+
+# Issue: [B107:hardcoded_password_default] Possible hardcoded password: '' (Low severity)
+# this is an invalid category since empty string is not a hardcoded password
+
+# Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False (High severity)
+# suppressing this because md5 is not being used for security purposes.
+# Not using the recommended usedforsecurity=False argument since it could have unintended effects.
+
+# Issue: [B110:try_except_pass] Try, Except, Pass detected. (Low severity)
+# this is an invalid category since the flow is expected
+
+# Issue: [B112:try_except_continue] Try, Except, Continue detected. (Low severity)
+# this is an invalid category since the flow is expected
+
+# Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory. (Medium severity)
+# this is an invalid category since the flows are invoked from Lambdas and temporary files,
+# which are purged promptly, are required for processing statements and for tests
+
+skips: ['B108', 'B112', 'B110', 'B324', 'B107', 'B106']
