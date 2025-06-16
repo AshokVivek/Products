@@ -1,0 +1,370 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                10,
+                10,
+                880,
+                600
+            ],
+            "regex": "(?i).*?Account\\s*(?:Number|No)\\s*:?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_2341bfa3-9591-4e79-9354-e14b42a2ed20"
+        },
+        {
+            "bbox": [
+                10,
+                10,
+                880,
+                600
+            ],
+            "regex": "(?i).*?([0-9X]+)Statement\\s*of\\s*Accounts.*",
+            "uuid": "accnt_bbox_968f0a0f-579f-4e42-9687-256534f47981"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                270,
+                350,
+                400,
+                450
+            ],
+            "from_regex": "(?i).*?period(.*?)to.*",
+            "to_bbox": [
+                350,
+                350,
+                490,
+                450
+            ],
+            "to_regex": "(?i).*to(.*)et.*",
+            "uuid": "date_bbox_825cff71-9d95-49b2-bf83-8f911b6fcac4"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                10,
+                100,
+                300,
+                300
+            ],
+            "regex": "(?i).*?Communication\\s*Address\\s*:\\s*(.*?)Address",
+            "uuid": "address_bbox_4a24beeb-1a9d-40cf-ae9a-d3a94775b410"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                10,
+                10,
+                300,
+                150
+            ],
+            "regex": "(?i)(?:.|\n)*Name\\s*:?\\s*(.*)",
+            "uuid": "name_bbox_1f4b207f-ecf3-4ef2-a51a-75496626aa01"
+        },
+        {
+            "bbox": [
+                5,
+                5,
+                5000,
+                9000
+            ],
+            "regex": "(?i)(?:.|\n)*Name\\s*:?\\s*(.*)",
+            "uuid": "name_bbox_5611f901-7819-410a-9e3d-611ce2245cac"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "table_setting": {
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "lines"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance"
+            ],
+            "uuid": "trans_bbox_024552ca-5886-4718-80f1-d9fbc4835688"
+        },
+        {
+            "table_setting": {
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "lines"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "balance_sign"
+            ],
+            "uuid": "trans_bbox_075a2c68-ae38-43ab-8fcf-de05799170b8"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    20,
+                    68,
+                    112,
+                    270,
+                    290,
+                    337,
+                    374,
+                    432,
+                    487,
+                    549,
+                    575
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "random2",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "random3"
+            ],
+            "uuid": "trans_bbox_22801919-cd2e-4705-973c-2b2caa3bae8a"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    13,
+                    61,
+                    107,
+                    309,
+                    331,
+                    382,
+                    420,
+                    467,
+                    514,
+                    560,
+                    580
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "random2",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "random3"
+            ],
+            "uuid": "trans_bbox_20fda6bc-298b-444c-81de-4902fafffadd"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    14,
+                    64,
+                    114,
+                    298,
+                    322,
+                    373,
+                    406,
+                    457,
+                    508,
+                    556,
+                    580
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "random2",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "random3"
+            ],
+            "uuid": "trans_bbox_1558d465-5e85-4272-b8d1-98aa8a83e2d2"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    25,
+                    80,
+                    220,
+                    375,
+                    440,
+                    510,
+                    580
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "transaction_note",
+                "random",
+                "debit",
+                "credit",
+                "balance"
+            ],
+            "uuid": "trans_bbox_f2fa5fb3-c00b-4e4c-b874-c9fda055d308"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    0,
+                    64,
+                    150,
+                    275,
+                    364,
+                    424,
+                    523,
+                    617,
+                    710,
+                    780
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "random",
+                "date",
+                "transaction_note",
+                "date2",
+                "random1",
+                "random2",
+                "debit",
+                "credit",
+                "balance"
+            ],
+            "uuid": "trans_bbox_4129c91d-8d2f-4550-a1d8-193959ceb565"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    20,
+                    69,
+                    119,
+                    195,
+                    236,
+                    292,
+                    335,
+                    404,
+                    472,
+                    535,
+                    568
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "random2",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "random3"
+            ],
+            "uuid": "trans_bbox_982fa2fa-f70f-4038-99a8-c90a4e82c2bb"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    12,
+                    56,
+                    97,
+                    282,
+                    309,
+                    350,
+                    390,
+                    437,
+                    485,
+                    525,
+                    545
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "random2",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "random3"
+            ],
+            "uuid": "trans_bbox_6f1cd8c0-9ab9-4ac8-b9f5-9874a7633c61"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    19,
+                    65,
+                    112,
+                    185,
+                    223,
+                    275,
+                    314,
+                    380,
+                    444,
+                    503,
+                    535
+                ],
+                "horizontal_strategy": "lines",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "date2",
+                "transaction_note",
+                "random",
+                "random2",
+                "chq_num",
+                "debit",
+                "credit",
+                "balance",
+                "random3"
+            ],
+            "uuid": "trans_bbox_401e7128-505a-4f6f-8086-2a2175abe724"
+        }
+    ]
+}

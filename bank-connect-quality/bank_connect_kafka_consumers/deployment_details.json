@@ -1,0 +1,92 @@
+{
+  "consumers": {
+    "recurring_bulk_pull_consumers": {
+      "ENABLE": true,
+      "TOPIC_NAME": "recurring_bulk_pull",
+      "GROUP_ID": "recurring_bulk_pull_consumers_group",
+      "NUMBER_OF_WORKERS": 2,
+      "NUMBER_OF_THREADS": 2,
+      "CONSUMER_FUNCTION_NAME": "recurring_bulk_pull_consumer",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 600000
+    },
+    "email_delivering_consumers": {
+      "ENABLE": true,
+      "TOPIC_NAME": "email_deliveries",
+      "GROUP_ID": "email_delivering_consumers_group",
+      "NUMBER_OF_WORKERS": 4,
+      "NUMBER_OF_THREADS": 2,
+      "CONSUMER_FUNCTION_NAME": "email_delivering_consumers",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 600000
+    },
+    "aa_success_percentage_consumer": {
+      "ENABLE": true,
+      "TOPIC_NAME": "bank-connect-cache-refresher",
+      "GROUP_ID": "bank_connect_cache_refresher_consumer_group",
+      "NUMBER_OF_WORKERS": 1,
+      "NUMBER_OF_THREADS": 1,
+      "CONSUMER_FUNCTION_NAME": "aa_success_percentage_consumer",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 60000
+    },
+    "reports_daily_consents_consumer": {
+      "ENABLE": true,
+      "TOPIC_NAME": "reports_daily_consents",
+      "GROUP_ID": "reports_daily_consents_consumer_group",
+      "NUMBER_OF_WORKERS": 1,
+      "NUMBER_OF_THREADS": 1,
+      "CONSUMER_FUNCTION_NAME": "reports_daily_consents",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 60000
+    },
+    "fiu_module_switcher_consumer": {
+      "ENABLE": true,
+      "TOPIC_NAME": "success_rate_monitor",
+      "GROUP_ID": "fiu_module_switcher_consumer_group",
+      "NUMBER_OF_WORKERS": 1,
+      "NUMBER_OF_THREADS": 1,
+      "CONSUMER_FUNCTION_NAME": "fiu_module_switcher",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 60000
+    },
+    "webhook_sending_consumer": {
+      "ENABLE": true,
+      "TOPIC_NAME": "webhook_sending_topic",
+      "GROUP_ID": "webhook_sending_consumer_group",
+      "NUMBER_OF_WORKERS": 1,
+      "NUMBER_OF_THREADS": 1,
+      "CONSUMER_FUNCTION_NAME": "send_webhook",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 60000
+    },
+    "tcap_mis_generation_consumer": {
+      "ENABLE": true,
+      "TOPIC_NAME": "mis_email",
+      "GROUP_ID": "tcap_mis_generation_consumer_group",
+      "NUMBER_OF_WORKERS": 1,
+      "NUMBER_OF_THREADS": 1,
+      "CONSUMER_FUNCTION_NAME": "tcap_mis_generation",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 60000
+    },
+    "dms_failure_emailer_consumers": {
+      "ENABLE": true,
+      "TOPIC_NAME": "dms_failure",
+      "GROUP_ID": "dms_failure_consumers_group",
+      "NUMBER_OF_WORKERS": 1,
+      "NUMBER_OF_THREADS": 1,
+      "CONSUMER_FUNCTION_NAME": "dms_failure_emailer",
+      "IS_BATCH_CONSUMPTION_ENABLED": false,
+      "MESSAGE_CONSUMPTION_BATCH_SIZE": 1,
+      "MAX_POLL_INTERVAL_IN_MILLISECONDS": 60000
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "name_bbox": [
+    ],
+    "address_bbox": [
+        {
+            "bbox":[5,133,328,215],
+            "regex":"(?i)(.*)",
+            "uuid":"address_bbox_04e8c915-feef-4256-bdff-aa197f9b19e2"
+        }
+    ],
+    "card_number_bbox": [
+        {
+            "bbox":[21,203,398,411],
+            "regex":"(?i)[\\s\\S]*yes\\s*bank\\s*card\\s*number\\s*([0-9X]*)\\s*statement",
+            "uuid":"card_number_bbox_948811a4-faee-415d-8800-c880c61c2749"
+        }
+    ],
+    "payment_due_date": [
+    ],
+    "total_dues": [
+    ],
+    "min_amt_due": [
+    ],
+    "credit_limit": [
+    ],
+    "avl_credit_limit": [
+    ],
+    "avl_cash_limit": [
+    ],
+    "opening_balance": [
+    ],
+    "payment/credits": [
+    ],
+    "purchase/debits": [
+    ],
+    "statement_date": [
+        {
+            "bbox":[24,229,209,410],
+            "regex":"(?i)[\\s\\S]*statement\\s*date\\s*:?\\s*([0-9\\-\/]*)\\s*total",
+            "uuid":"statement_date_04e8c915-feef-4256-bdff-aa197f9b19e2"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines":[22,82,496,575],
+            "horizontal_lines":"Text",
+            "column":["date","transaction_note","amount"],
+            "uuid":"trans_bbox_a98ddaf8-61c7-43c9-885b-304eae0e9528"
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "name_bbox": [
+        {
+            "bbox": [
+                56,
+                77,
+                811,
+                140
+            ],
+            "regex": "(?i)(?:\\s*)(([a-z.\\s]*).*[0-9]*\\:[0-9]*([a-z.\\s]*\\s*))\\s*\ufede\ufef4\ufee4\ufecc\ufedf\ufe8d.*",
+            "uuid": "name_bbox_e14f3c2e-3d75-4037-8bd4-7c00c9b1c7ef"
+        },
+        {
+            "bbox": [
+                6,
+                75,
+                830,
+                300
+            ],
+            "regex": "(?i)(?:.*)Client\\s*Name\\s*(.*)\\s*Account\\s*Name.*",
+            "uuid": "name_bbox_5a3bfc94-6345-4bf9-88fa-f25ced14aa7b"
+        }
+    ],
+    "accnt_bbox": [
+        {
+            "bbox": [
+                14,
+                123,
+                840,
+                225
+            ],
+            "regex": "(?i).*([0-9X]{14}):\ufea6\ufef3\ufead\ufe8e\ufe98\ufedf\ufe8d.*",
+            "uuid": "accnt_bbox_a74a86a5-9e3d-4ac7-ae83-485593413929"
+        },
+        {
+            "bbox": [
+                6,
+                75,
+                830,
+                300
+            ],
+            "regex": "(?i)(?:.*)Account\\s*Number\\s*([0-9X]*)\\s*Date.*",
+            "uuid": "accnt_bbox_700b04b6-e33a-40e3-ac98-5cf2b7e07330"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                14,
+                123,
+                840,
+                225
+            ],
+            "from_regex": "(?i)\n*\\s*.*([0-9]{2}/[0-9]{2}/[0-9]{4}).*\n*\\s*(?:[0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "to_bbox": [
+                14,
+                123,
+                840,
+                225
+            ],
+            "to_regex": "(?i)\n*\\s*.*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "uuid": "date_bbox_da0e3e95-593d-4ce9-a7f1-ae3213a81a70"
+        },
+        {
+            "from_bbox": [
+                6,
+                75,
+                830,
+                300
+            ],
+            "from_regex": "(?i)(?:.*)Date\\s*From\\s*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "to_bbox": [
+                6,
+                75,
+                830,
+                300
+            ],
+            "to_regex": "(?i)(?:.*)Date\\s*To\\s*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "uuid": "date_bbox_1ca843f3-13fd-4179-88bb-0a676920958b"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    82,
+                    115,
+                    196,
+                    278,
+                    388,
+                    499,
+                    621,
+                    767,
+                    814
+                ],
+                "horizontal_strategy": "text",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "balance",
+                "debit",
+                "credit",
+                "random1",
+                "random2",
+                "random3",
+                "transaction_note",
+                "date"
+            ],
+            "uuid": "trans_bbox_10c96540-4c78-4add-94c6-f06dd7c32077"
+        },
+        {
+            "table_setting": {
+                "explicit_vertical_lines": [
+                    24,
+                    49,
+                    146,
+                    571,
+                    637,
+                    673,
+                    702,
+                    739,
+                    775,
+                    810
+                ],
+                "horizontal_strategy": "text",
+                "snap_tolerance": 5,
+                "vertical_strategy": "explicit"
+            },
+            "column": [
+                "date",
+                "random",
+                "transaction_note",
+                "random1",
+                "random2",
+                "random3",
+                "debit",
+                "credit",
+                "balance"
+            ],
+            "uuid": "trans_bbox_7fd674b3-4cbb-4dcd-b209-58e723297766"
+        }
+    ]
+}

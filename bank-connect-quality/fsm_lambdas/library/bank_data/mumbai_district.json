@@ -1,0 +1,83 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                25,
+                96,
+                217,
+                114
+            ],
+            "regex": "(?i)(?:\\s*|.*)Accountno\\s*:?\\s*([0-9]+).*",
+            "uuid": "accnt_bbox_71ccadff-50e6-44db-b12a-7b4dab114401"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                10,
+                109,
+                268,
+                125
+            ],
+            "regex": "(?i)(?:\\s*|.*)Name\\s*:\\s*(.*).*",
+            "uuid": "name_bbox_ad56348c-0210-417b-8f59-04bc606ebca4"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                21,
+                121,
+                330,
+                158
+            ],
+            "regex": "(?i)Address\\s*:?\\s*(.*)",
+            "uuid": "address_bbox_76249db0-e151-4df7-a626-c6eef151cdd1"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                225,
+                74,
+                457,
+                94
+            ],
+            "from_regex": "(?i)(?:\\s*|.*).*From\\s*([0-9]{2}\\-[A-Z]{3}\\-[0-9]{4})\\s*to.*",
+            "to_bbox": [
+                225,
+                74,
+                457,
+                94
+            ],
+            "to_regex": "(?i)(?:\\s*|.*).*From.*to\\s*([0-9]{2}\\-[A-Z]{3}\\-[0-9]{4}).*",
+            "uuid": "date_bbox_06c2be41-7ba8-44af-8f05-1a17f1705b6f"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                33,
+                94,
+                323,
+                367,
+                455,
+                541,
+                628
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "special_symbol": true,
+            "uuid": "trans_bbox_86c06cb4-9986-4348-bbe8-ce0d3c1f4209"
+        }
+    ]
+}

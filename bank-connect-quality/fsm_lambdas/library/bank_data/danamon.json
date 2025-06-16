@@ -1,0 +1,36 @@
+{
+    "trans_bbox":[
+        {
+            "horizontal_lines":"Text",
+            "vertical_lines":[35,76,117,233,314,396,477,558],
+            "column":[
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_f7a6173e-3a55-4ba4-ad9f-cf9b2367c804"
+        }
+    ],
+    "accnt_bbox":[
+        {
+            "bbox":[10,10,215,232],
+            "regex":"(?i)[\\S\\s]*no\\s*\\.?\\s*nasabah\\s*\\:\\s*([0-9]*)\\s*cabang",
+            "uuid": "accnt_bbox_v5a6173e-3a55-4ba4-ad9f-cf9b2367c804"
+        }
+    ],
+    "date_bbox":[
+        {
+            "from_regex":"(?i)[\\s\\S]*rekening\\s*([A-Za-z]{3}\\s*[0-9]{2}\\,?\\.?[0-9]{2,4})\\s*\\-",
+            "to_regex":"(?i)[\\s\\S]*\\s*\\-\\s*([A-Za-z]{3}\\s*[0-9]{2}\\,?\\.?[0-9]{2,4})\\s*kredit",
+            "from_bbox":[401, 6,583,346],
+            "to_bbox":[401, 6,583,346],
+            "uuid": "date_bbox_v5a6173e-3a55-7e54-ad9f-cf9b2367c804"
+        }
+    ]
+}

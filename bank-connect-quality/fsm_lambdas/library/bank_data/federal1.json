@@ -1,0 +1,83 @@
+{
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                70,
+                113,
+                328,
+                371,
+                437,
+                508
+            ],
+            "column": [
+                [
+                    "date2",
+                    "date",
+                    "transaction_note",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_1fac01a3-e16f-4a5d-a1e2-7c6579b359d2"
+        },
+        {
+            "vertical_lines": [
+                41,
+                99,
+                157,
+                295,
+                326,
+                385,
+                442,
+                491,
+                570
+            ],
+            "column": [
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "random",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_3a264743-7076-46e9-b774-a417077f3811"
+        },
+        {
+            "vertical_lines": [
+                11,
+                70,
+                128,
+                263,
+                299,
+                366,
+                425,
+                478,
+                524,
+                568,
+                600
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "date2",
+                    "transaction_note",
+                    "random",
+                    "random2",
+                    "chq_num",
+                    "debit",
+                    "credit",
+                    "balance",
+                    "random3"
+                ]
+            ],
+            "uuid": "trans_bbox_ccc1"
+        }
+    ]
+}

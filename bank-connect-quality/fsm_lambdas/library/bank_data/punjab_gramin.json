@@ -1,0 +1,86 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                10,
+                109,
+                567,
+                445
+            ],
+            "regex": "(?i).*statement\\s*of\\s*account\\s*:\\s*([0-9]{8,})\\s*for.*",
+            "uuid": "accnt_bbox_ec5bcb29-1298-4b2e-b170-b19deff88c90"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                10,
+                109,
+                567,
+                445
+            ],
+            "regex": "(?i)[\\s\\S]+Customer\\s*Name\\s*:?\\s*(.*).*",
+            "uuid": "name_bbox_6e54174d-a107-4e16-ae84-dccf3b181ba3"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                76,
+                109,
+                567,
+                445
+            ],
+            "regex": "(?i)(?:\\s*|.*)Address\\s*:?\\s*([A-Za-z0-9\\s\\n\\-,\\:]+)\\s*of\\s*account.*",
+            "uuid": "address_bbox_bf5fd4a3-f5a3-4d71-8541-59f5c16485a2"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                10,
+                109,
+                567,
+                445
+            ],
+            "regex": "(?i).*IFSC\\s*Code\\s*:?\\s*([A-Z]{4}[0-9A-Z]{7}).*",
+            "uuid": "ifsc_bbox_370e2e26-dea6-4a2c-86ff-5923f846033b"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                10,
+                109,
+                567,
+                445
+            ],
+            "from_regex": "(?i).*statement\\s*of\\s*account.*period\\s*:\\s*([0-9]{1,2}-[0-9]{1,2}-[0-9]{2,4})\\s*to.*",
+            "to_bbox": [
+                10,
+                109,
+                567,
+                445
+            ],
+            "to_regex": "(?i).*statement\\s*of\\s*account.*?to\\s*([0-9]{1,2}-[0-9]{1,2}-[0-9]{2,4}).*",
+            "uuid": "date_bbox_3b290ed7-1ebb-469d-ba81-d8cb116f0271"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": true,
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "amount",
+                    "transaction_type",
+                    "balance",
+                    "transaction_note"
+                ]
+            ],
+            "uuid": "trans_bbox_63d96a22-372b-44fa-9ad5-73844900a671"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+DEFAULT_REQUIRED_TRANSACTIONS_COUNT = 5
+
+V5_SUMMARY_INFO = [
+    ['Name of the Bank','bank'],
+    ['Account Opening Date ','account_opening_date'],
+    ['Account Category', 'account_category'],
+    ['Account Number', 'account_number'],
+    ['Source', 'source'],
+    ['BankConnect Score', 'bc_score'],
+    ['OD Limit', 'od_limit'],
+    ['Drawing Power', 'credit_limit'],
+    ['BankConnect Status', 'fraud_status'],
+    ['Banking Period Start Date', 'txn_from_date'],
+    ['Banking Period End  Date', 'txn_to_date'],
+    ['Account ID', 'account_id']
+]
+
+V5_PERSONAL_DATA = [
+    ['Name of the Account Holder', 'name'],
+    ['Address', 'address'],
+    ['Email ID', 'email'],
+    ['PAN', 'pan'],
+    ['IFSC', 'ifsc'],
+    ['MICR', 'micr'],
+    ['Mobile Number', 'mobile_number'],
+    ['Applicant ID', 'applicant_id'],
+    ['Finbox Transaction ID', 'transaction_id']
+]
+
+MONTHWISE_DETAILS_DICT_V5 = {
+    'Sanction Limit': 'sanction_limit', 
+    'Drawing Limit': 'drawing_power_limit', 
+    'Average Utilization': 'avg_amt_overdraft_utilization', 
+    'Total No. of Credit Transactions': 'cnt_credit_excluding_reversal',
+    'Total Amount of Credit Transactions': 'amt_credit_excluding_reversal', 
+    'Total No. of Debit Transactions': 'cnt_debit_excluding_reversal', 
+    'Total Amount of Debit Transactions': 'amt_debit_excluding_reversal', 
+    'Total No of Group Credit Transactions': 'cnt_self_transfer_credit', 
+    'Total Amount of Group Credit Transactions': 'amt_self_transfer_credit', 
+    'Total No of Group Debit Transactions': 'cnt_self_transfer_debit', 
+    'Total Amount of Group Debit Transactions': 'amt_self_transfer_debit', 
+    'Total No of Self Credit Transactions': 'cnt_self_transfer_credit', 
+    'Total Amount of Self Credit Transactions': 'amt_self_transfer_credit', 
+    'Total No of Self Debit Transactions': 'cnt_self_transfer_debit', 
+    'Total Amount of Self Debit Transactions': 'amt_self_transfer_debit', 
+    'Total No. of Cash Deposits': 'cnt_cash_deposit_credit', 
+    'Total Amount of Cash Deposits': 'amt_cash_deposit_credit', 
+    'Total No. of Cash Withdrawals': 'cnt_cash_withdrawl_debit',
+    'Total Amount of Cash Withdrawals': 'amt_cash_withdrawl_debit',
+    'Total No. of Cheque Deposits': 'cnt_cheque_deposit_having_chq_num', 
+    'Total Amount of Cheque Deposits': 'amt_cheque_deposit_having_chq_num', 
+    'Total No. of Cheque Issues': 'cnt_cheque_issue_having_chq_num',
+    'Total Amount of Cheque Issues': 'amt_cheque_issue_having_chq_num',
+    'Total No.of Cash Withdrawal': 'cnt_cash_withdrawl_debit', 
+    'Total Amount of Cash Withdrawal': 'amt_cash_withdrawl_debit', 
+    'Total No. of Inward Bounces (Non Technical)': 'cnt_inward_bounces_tech_credit', 
+    'Total No. of Inward Bounces (Technical)': 'cnt_inward_bounces_non_tech_credit', 
+    'Total No. of outward Bounces': 'cnt_outward_cheque_bounce_debit', 
+    '%age of Outward Bounces': 'perc_outward_bounce_transactions_to_total_debits', 
+    '%age of Inward Bounces (Non Technical)': 'perc_non_tech_inward_bounce_transactions_to_total_debits', 
+    '%age of Inward Bounces (Technical)': 'perc_tech_inward_bounce_transactions_to_total_debits', 
+    'Number of Times Account is Overdrawn': 'no_of_instances_account_overdrawn', 
+    'No.of Days Account is Overdrawn': 'number_of_days_account_overdrawn', 
+    'Average number of Days Account was overdrawn': 'avg_no_of_days_account_overdrawn', 
+    'Peak Delay for which account was overdrawn': 'max_days_account_in_overdrawn_state', 
+    'Maximum Amount Overdrawn': 'max_overdrawn_amount', 
+    'Total No. of times CC limit breached': 'number_of_days_cc_limit_breached',
+    'Total No. of times CC limit breached and cheque bounced': 'number_of_days_cc_limit_breached_and_chq_bounced',
+    '%age of Cash Deposit to Total Credit': 'perc_total_amt_cash_deposit_to_total_credit', 
+    '%age of Cash Withdrawal to Total Debit': 'perc_total_amt_cash_withdrawal_to_total_debit', 
+    'No. of Days it took to serve interest': 'no_of_days_to_serve_cc_interest', 
+    'Interest Service Delay': 'no_of_days_to_serve_cc_interest', 
+    'Total Amount of Interest Charges': 'amt_ccod_interest', 
+    'Total Number of Loan Debit': 'cnt_emi_debit', 
+    'Total Amount of Loan Debit': 'amt_emi_debit', 
+    'Min EOD Balance': 'min_eod_balance', 
+    'Max EOD Balance': 'max_eod_balance', 
+    'Average EOD Balance': 'avg_bal', 
+    'Total No. of EMI Bounces ': 'cnt_emi_bounce_credit', 
+    'Total No. of EMI Bounces (Current Month)': 'cnt_emi_bounce_credit', 
+    'ECS/Nach Charges': 'cnt_ach_bounce_charge',
+    'Loan Disbursed Amount (For completed months)':'amt_loan_credits',
+    'Loan Disbursed Amount (Current Month)': 'amt_loan_credits',
+    'Total':'sum_of_eod_bal_on_1_10_15_25'
+}
+
+OVERALL_SUMMARY_DICT_V5 = {
+    "Peak Delay in Interest Servicing": "max_no_of_days_to_serve_cc_interest",
+    "Average in interest servicing": "avg_of_no_of_days_to_serve_cc_interest"
+}

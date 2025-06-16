@@ -1,0 +1,42 @@
+# built using pipreqs and updated as per Dependabot warnings
+# pipreqs reference: https://github.com/bndr/pipreqs
+# dependabot vulnerabilities: https://finboxsaas.atlassian.net/browse/BANC-1919
+
+wheel==0.45.0
+boto3==1.34.76
+botocore==1.34.76
+celery==5.2.2
+fuzzywuzzy==0.18.0
+holidays==0.46
+numpy==1.26.4
+ocrmypdf==16.1.2
+opencv-python==4.8.1.78
+openpyxl==3.1.2
+pandas==2.2.1
+pdf2image==1.17.0
+pdfminer.six==20231228
+pdfplumber==0.11.0
+pikepdf==8.14.0
+PyMuPDF==1.24.4
+pydantic==2.7.1
+pytesseract==0.3.10
+python-dateutil==2.8.2
+python-Levenshtein==0.12.2
+rapidfuzz==3.7.0
+requests==2.32.0
+scikit-learn==1.5.0
+sentry-sdk==2.8.0
+typing_extensions==4.10.0
+xlsxwriter==3.2.0
+xmltodict==0.13.0
+polars==1.5.0
+datasketch==1.6.5
+redis==5.0.8
+setuptools==70.0.0
+slack_sdk==3.27.2
+watchtower==3.2.0
+python-json-logger==2.0.7
+ddtrace==1.6.1
+pypdf==5.2.0
+lz4==4.4.3
+psycopg2-binary==2.9.6

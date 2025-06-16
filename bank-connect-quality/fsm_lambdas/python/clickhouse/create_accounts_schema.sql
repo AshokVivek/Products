@@ -1,0 +1,33 @@
+CREATE TABLE accounts(
+    org_id LowCardinality(String),
+    org_name LowCardinality(String),
+    entity_id UUID,
+    session_id UUID,
+    session_from_date Nullable(Date),
+    session_to_date Nullable(Date),
+    bank LowCardinality(String),
+    account_id UUID,
+    account_number String CODEC(ZSTD(1)),
+    name String CODEC(ZSTD(1)),
+    address String CODEC(ZSTD(1)),
+    statements Array(String),
+    account_category LowCardinality(String),
+    account_opening_date Nullable(Date),
+    credit_limit Nullable(Float32),
+    ifsc String CODEC(ZSTD(1)),
+    micr String CODEC(ZSTD(1)),
+    od_limit Nullable(Float32),
+    missing_data Array(String),
+    months Array(String),
+    country_code LowCardinality(String),
+    currency_code LowCardinality(String),
+    is_inconsistent Nullable(Bool),
+    inconsistent_hash String CODEC(ZSTD(1)),
+    is_rejected_account Nullable(Bool),
+    to_reject_account_enabled Nullable(Bool),
+    created_at DateTime,
+    last_updated DateTime,
+)
+ENGINE = MergeTree
+PARTITION BY toYYYYMM(created_at)
+ORDER BY (org_id, entity_id, account_id);

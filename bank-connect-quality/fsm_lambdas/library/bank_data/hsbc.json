@@ -1,0 +1,645 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                30,
+                80,
+                230,
+                105
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*([0-9-]+).*",
+            "uuid": "accnt_bbox_61c516d7-715e-49cd-b2c2-a122dd52ec77"
+        },
+        {
+            "bbox": [
+                32,
+                236,
+                203,
+                256
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*:\\s*([0-9-]+).*",
+            "uuid": "accnt_bbox_00872c55-0102-4e17-8f1b-c58949d03e5d"
+        },
+        {
+            "bbox": [
+                268,
+                93,
+                581,
+                297
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*:?\\s*([0-9-]{8,}).*",
+            "uuid": "accnt_bbox_7018aea2-1171-4273-9055-5f2b7f1353e4"
+        },
+        {
+            "bbox": [
+                109,
+                73,
+                173,
+                96
+            ],
+            "regex": "(?i)([0-9-]+).*",
+            "uuid": "accnt_bbox_00872c55-0102-4e17-8f1b-c58949d03e52"
+        },
+        {
+            "bbox": [
+                10,
+                156,
+                355,
+                342
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*:?\\s*([0-9-]{8,}).*",
+            "uuid": "accnt_bbox_d3a8af66-8c1b-4053-a249-a17b82a1973a"
+        },
+        {
+            "bbox": [
+                14,
+                25,
+                397,
+                202
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*:?\\s*([0-9\\-]{8,}).*",
+            "uuid": "accnt_bbox_0a65d4e5-a973-48d6-a277-5503fd30b1c9"
+        },
+        {
+            "bbox": [
+                456,
+                65,
+                844,
+                318
+            ],
+            "regex": "(?i).*Account\\s*Number\\s*:?\\s*([0-9\\-]{8,}).*",
+            "uuid": "accnt_bbox_da04f193-a929-4217-a617-8844794eee15"
+        },
+        {
+            "bbox": [
+                1,
+                159,
+                158,
+                440
+            ],
+            "regex": "(?i).*Number\\s*:?\\s*([0-9\\-]{8,}).*",
+            "uuid": "accnt_bbox_5172a364-4072-4c15-b9be-2126125bc1ce"
+        },
+        {
+            "bbox": [
+                19,
+                104,
+                470,
+                354
+            ],
+            "regex": "(?i).*Res\\s*([0-9\\-]{8,}).*",
+            "uuid": "accnt_bbox_00bb560d-36f6-433a-9848-117ecaed067a"
+        },
+        {
+            "bbox": [
+                54,
+                1278,
+                1612,
+                2072
+            ],
+            "regex": "(?i).*accounts([\\d]{3}-[\\d]{6}-[\\d]{3}).*",
+            "image_flag": true,
+            "uuid": "accnt_bbox_2b1e2a18-17f1-46f9-b4bb-76bb19aa4680"
+        },
+        {
+            "bbox": [
+                78,
+                200,
+                1560,
+                1150
+            ],
+            "regex": "(?i).*accounts([\\d]{3}-[\\d]{6}-[\\d]{3}).*",
+            "image_flag": true,
+            "uuid": "accnt_bbox_d3e83408-9364-4af5-9815-b3fb77e686fc"
+        },
+        {
+            "bbox": [
+                80,
+                280,
+                1160,
+                1075
+            ],
+            "regex": "(?i).*Account number: *([\\d]{3}-[\\d]{6}-[\\d]{3}).*",
+            "image_flag": true,
+            "uuid": "accnt_bbox_da1060ec-c2f4-4569-9044-84786868ebaf"
+        },
+        {
+            "bbox": [
+                58,
+                356,
+                1645,
+                1432
+            ],
+            "regex": "(?i).*accounts([\\d]{3}-[\\d]{6}-[\\d]{3}).*",
+            "image_flag": true,
+            "uuid": "accnt_bbox_bdeecf08-6c02-474c-8369-852e74db2435"
+        },
+        {
+            "bbox": [
+                628,
+                504,
+                822,
+                525
+            ],
+            "regex": "(?i).*([\\d]{3}-[\\d]{2}\\s*[\\d]{4}-[\\d]{3}).*",
+            "image_flag": true,
+            "uuid": "accnt_bbox_8749f46f-038d-41b9-8a4a-0388aecbeb74"
+        },
+        {
+            "bbox": [
+                721,
+                556,
+                894,
+                599
+            ],
+            "regex": "(?i)(.*)",
+            "image_flag": true,
+            "uuid": "accnt_bbox_adb34a72-a2d8-420d-a8ce-9efb00574c05"
+        },
+        {
+            "bbox": [
+                628,
+                500,
+                822,
+                539
+            ],
+            "regex": "(?i)(.*)",
+            "image_flag": true,
+            "uuid": "accnt_bbox_86d06833-799b-4b28-956a-af4188566b19"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                430,
+                200,
+                820,
+                230
+            ],
+            "from_regex": "(?i).*Specified\\s*Date\\s*Range\\s*(.*?)to.*",
+            "to_bbox": [
+                430,
+                200,
+                820,
+                230
+            ],
+            "to_regex": "(?i).*Specified\\s*Date\\s*Range\\s*.*to(.*).*",
+            "uuid": "date_bbox_c6d74e2f-db64-48f4-958e-23b99cb86e8b"
+        },
+        {
+            "from_bbox": [
+                33,
+                342,
+                184,
+                382
+            ],
+            "from_regex": "(?i).*range\\s*:\\s*([0-9]{2}/[0-9]{2}/[0-9]{4})\\s*-.*",
+            "to_bbox": [
+                33,
+                342,
+                184,
+                382
+            ],
+            "to_regex": "(?i).*-\\s*([0-9]{2}/[0-9]{2}/[0-9]{4}).*",
+            "uuid": "date_bbox_7fa4039b-cff7-464d-9e5c-6d8b6e0d6d19"
+        },
+        {
+            "from_bbox": [
+                80,
+                280,
+                1160,
+                1075
+            ],
+            "from_regex": "(?i).*date([0-9/]{10}).*",
+            "to_bbox": [
+                80,
+                280,
+                1160,
+                1075
+            ],
+            "to_regex": "(?i).*date(?:[0-9/]{10})([0-9/]{10}).*",
+            "uuid": "date_bbox_55e92b96-fc63-474d-b91f-d57a021b72de"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                30,
+                70,
+                420,
+                85
+            ],
+            "regex": "(?i)Account\\s*Name\\s*(.*).*",
+            "uuid": "name_bbox_96979796-89ea-4254-ac02-f58909aba372"
+        },
+        {
+            "bbox": [
+                18,
+                52,
+                390,
+                170
+            ],
+            "regex": "(?i)Account\\s*Name\\s*([A-Za-z\\s*\\/\\-\\.]+)\\s*Account.*",
+            "uuid": "name_bbox_7e624ae9-6c0e-4233-8369-2c1578a01d88"
+        },
+        {
+            "bbox": [
+                16,
+                142,
+                550,
+                210
+            ],
+            "regex": "(?i)(?:\\s*|.*)([A-Za-z\\s\\n\\.]+)\\s*Available\\s*Balance.*",
+            "uuid": "name_bbox_68c1c5c2-8ba3-4b10-925f-f623bee6be99"
+        },
+        {
+            "bbox": [
+                33,
+                74,
+                110,
+                99
+            ],
+            "regex": "(?i)([A-Za-z\\s\\n\\.]+).*",
+            "uuid": "name_bbox_7e624ae9-6c0e-4233-8369-2c1578a01d83"
+        },
+        {
+            "bbox": [
+                0,
+                198,
+                850,
+                880
+            ],
+            "regex": "(?:MR|MRS|MS) (.*)\n",
+            "image_flag": true,
+            "uuid": "name_bbox_f1db8403-8710-432c-b16e-b26bff981a20"
+        },
+        {
+            "bbox": [
+                0,
+                198,
+                850,
+                880
+            ],
+            "regex": "(?i)(?:premier account statement\n)(.*)",
+            "image_flag": true,
+            "uuid": "name_bbox_ae7df8ce-3442-42a5-ae90-534403aaa9b1"
+        },
+        {
+            "bbox": [
+                35,
+                114,
+                200,
+                175
+            ],
+            "regex": "(?i).*RES.*\n(.*)\n.*",
+            "uuid": "name_bbox_591d2f81-710e-458c-8ae1-7632959826ed"
+        },
+        {
+            "bbox": [
+                80,
+                280,
+                1130,
+                960
+            ],
+            "regex": "(?i)(?:[\\s\\S]* ){0,1}([a-zA-Z]+) *account statement[\\s\\S]+",
+            "image_flag": true,
+            "uuid": "name_bbox_8b7bc55c-ef43-4a2b-b7df-aca812a12d6b"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                30,
+                140,
+                205,
+                155
+            ],
+            "regex": "(?i).*BIC\\s*([A-Z0-9]{8}).*",
+            "uuid": "ifsc_bbox_b333e108-8e7d-4887-aa96-00ea3d5b93ff"
+        },
+        {
+            "bbox": [
+                54,
+                1278,
+                1612,
+                2072
+            ],
+            "regex": "(?i).*(?:i|\\|)fsc code: ([A-Z0-9]{11}).*",
+            "image_flag": true,
+            "uuid": "ifsc_bbox_ff21b938-12d8-4325-b499-90ff5513162a"
+        },
+        {
+            "bbox": [
+                78,
+                200,
+                1560,
+                1150
+            ],
+            "regex": "(?i).*(?:i|\\|)fsc code: ([A-Z0-9]{11}).*",
+            "image_flag": true,
+            "uuid": "ifsc_bbox_4cd4c478-7b6b-4e01-abfc-90ae936de32e"
+        },
+        {
+            "bbox": [
+                80,
+                280,
+                1130,
+                960
+            ],
+            "regex": "(?i).*(?:i|\\|)fsc code: ([A-Z0-9]{11}).*",
+            "image_flag": true,
+            "uuid": "ifsc_bbox_95ac9bf1-d22e-4192-be73-4f621fdaa417"
+        },
+        {
+            "bbox": [
+                58,
+                356,
+                1645,
+                1432
+            ],
+            "regex": "(?i).*(?:i|\\|)fsc code: ([A-Z0-9]{11}).*",
+            "image_flag": true,
+            "uuid": "ifsc_bbox_dbe16982-d9a3-4be5-8984-109dcc8ae70c"
+        }
+    ],
+    "micr_bbox": [
+        {
+            "bbox": [
+                54,
+                1278,
+                1612,
+                2072
+            ],
+            "regex": "(?i).*micr code: ([0-9]{9}).*",
+            "image_flag": true,
+            "uuid": "micr_bbox_f2122ff4-eb1b-4e2d-96a5-4858601214b2"
+        },
+        {
+            "bbox": [
+                78,
+                200,
+                1560,
+                1150
+            ],
+            "regex": "(?i).*micr code: ([0-9]{9}).*",
+            "image_flag": true,
+            "uuid": "micr_bbox_f5645b87-f390-4994-b208-d8b260de6518"
+        },
+        {
+            "bbox": [
+                80,
+                280,
+                1130,
+                960
+            ],
+            "regex": "(?i).*micr code: ([0-9]{9}).*",
+            "image_flag": true,
+            "uuid": "micr_bbox_5799c3c8-2bd6-4519-b5cb-84c54db38d42"
+        },
+        {
+            "bbox": [
+                58,
+                356,
+                1645,
+                1432
+            ],
+            "regex": "(?i).*micr code: ([0-9]{9}).*",
+            "image_flag": true,
+            "uuid": "micr_bbox_2ffa2689-14c5-41ab-8dff-7c3ac7443614"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                28,
+                98,
+                202,
+                290,
+                360,
+                420,
+                477,
+                603,
+                690,
+                753,
+                814
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "random",
+                    "transaction_note",
+                    "random2",
+                    "random3",
+                    "date2",
+                    "credit",
+                    "debit",
+                    "balance",
+                    "random4",
+                    "date"
+                ]
+            ],
+            "uuid": "trans_bbox_d6f2d4f4-8081-4186-a41a-eeaf4431177c"
+        },
+        {
+            "vertical_lines": [
+                46,
+                117,
+                288,
+                375,
+                469,
+                550
+            ],
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "credit",
+                    "debit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_2a2b5f9d-59d2-4bfb-96ec-44ba0d9dd4e0"
+        },
+        {
+            "vertical_lines": [
+                52,
+                111,
+                174,
+                228,
+                248,
+                345,
+                427,
+                466,
+                509,
+                550,
+                605,
+                659,
+                706,
+                732
+            ],
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "random",
+                    "random2",
+                    "random3",
+                    "random4",
+                    "transaction_note",
+                    "random5",
+                    "random6",
+                    "date",
+                    "date2",
+                    "credit",
+                    "debit",
+                    "balance",
+                    "random7"
+                ]
+            ],
+            "uuid": "trans_bbox_2a2b5f9d-59d2-4bfb-96ec-44ba0d9dd497"
+        },
+        {
+            "vertical_lines": [
+                280,
+                795,
+                1026,
+                1265
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "credit",
+                    "debit",
+                    "balance"
+                ]
+            ],
+            "image_flag": true,
+            "uuid": "trans_bbox_5849d900-c86c-4626-946b-0ad48541d782"
+        },
+        {
+            "vertical_lines": [
+                78,
+                573,
+                224,
+                618
+            ],
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "credit",
+                    "debit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_ec0b4978-86ab-4b79-b3d6-80df9060e8f9"
+        }
+    ],
+    "account_category_bbox": [
+        {
+            "bbox": [
+                30,
+                180,
+                210,
+                200
+            ],
+            "regex": "(?i).*?Account\\s*Type\\s*(.*)account.*",
+            "uuid": "account_category_bbox_bd1ee508-6a31-4fb9-8ce6-003ad522a0b2"
+        },
+        {
+            "bbox": [
+                54,
+                1278,
+                1612,
+                2072
+            ],
+            "regex": "(?i).* (.*)(?: account-res).*",
+            "image_flag": true,
+            "uuid": "account_category_bbox_13c72ac5-c003-43ca-9675-504c6a557c3f"
+        },
+        {
+            "bbox": [
+                78,
+                200,
+                1560,
+                1150
+            ],
+            "regex": "(?i).* (.*)(?: account-res).*",
+            "image_flag": true,
+            "uuid": "account_category_bbox_3d401b6a-77a5-4b14-99c2-d967702a0b9e"
+        },
+        {
+            "bbox": [
+                80,
+                280,
+                1130,
+                960
+            ],
+            "regex": "(?i)[\\s\\S]+\n(.*)(?: account res)[\\s\\S]+",
+            "image_flag": true,
+            "uuid": "account_category_bbox_8be4a4ff-fedc-4ca6-adc9-33b45067834b"
+        }
+    ],
+    "account_category_mapping": {
+        "CURRENT": "corporate"
+    },
+    "address_bbox": [
+        {
+            "bbox": [
+                0,
+                198,
+                850,
+                880
+            ],
+            "regex": "(?i)(?:MR|MRS|MS)(?:.*\n)([\\s\\S]+)",
+            "image_flag": true,
+            "uuid": "address_bbox_5ac0bee4-201e-4bd8-b94d-f090c6f1a0bc"
+        },
+        {
+            "bbox": [
+                0,
+                198,
+                850,
+                880
+            ],
+            "regex": "(?i)(?:premier account statement\n.*\n)([\\s\\S]+)",
+            "image_flag": true,
+            "uuid": "address_bbox_92a6e30a-a9ea-48e7-9460-f2b69c9adc96"
+        },
+        {
+            "bbox": [
+                31,
+                160,
+                220,
+                250
+            ],
+            "regex": "(?i)(.*)\\s*Account.*",
+            "uuid": "address_bbox_218458ea-022f-42a2-81b1-cc350e3e8284"
+        },
+        {
+            "bbox": [
+                80,
+                280,
+                1130,
+                960
+            ],
+            "regex": "(?i)[\\s\\S]+(?:MR|MRS|MS)(?:.*\n)([\\s\\S]+)account",
+            "image_flag": true,
+            "uuid": "address_bbox_1fc5ec87-48b1-47f3-b457-8143e46cd7ba"
+        }
+    ],
+    "limit_bbox": [
+        {
+            "bbox": [
+                80,
+                1275,
+                1550,
+                2060
+            ],
+            "regex": "",
+            "image_flag": true,
+            "uuid": "limit_bbox_661e76d9-ede9-4167-8684-d43803a99a0c"
+        }
+    ]
+}

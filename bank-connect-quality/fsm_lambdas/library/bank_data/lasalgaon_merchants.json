@@ -1,0 +1,94 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                293,
+                126,
+                563,
+                193
+            ],
+            "regex": "(?i).*transaction\\s*no.*:\\s*([0-9]{8,})\\s*aadhar.*",
+            "uuid": "accnt_bbox_95ec4584-89ef-4143-826b-d58061e8c0f0"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                124,
+                86,
+                304,
+                131
+            ],
+            "from_regex": "(?i).*from\\s*date\\s*:?\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{2,4}).*",
+            "to_bbox": [
+                312,
+                89,
+                492,
+                145
+            ],
+            "to_regex": "(?i).*to\\s*date\\s*:?\\s*([0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{2,4}).*",
+            "uuid": "date_bbox_be22b7a0-af46-4a26-9d6f-ea9a1fae35c1"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                7,
+                94,
+                517,
+                151
+            ],
+            "regex": "(?i)[\\s\\S]+name\\s*([A-Za-z\\s\\-\\/\\.]+)\\s*non\\s*\\-\\s*member.*",
+            "uuid": "name_bbox_96a74cd6-2467-44f5-8092-91a9c04b4b95"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                373,
+                31,
+                586,
+                88
+            ],
+            "regex": "(?i)[\\s\\S]+IFSC\\s*Code\\s*:?\\s*([A-Z0-9]{11}).*",
+            "uuid": "ifsc_bbox_8bc3b16a-d729-493d-ae40-8f755f529b56"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                6,
+                131,
+                303,
+                230
+            ],
+            "regex": "(?i).*address\\s*:?\\s*([A-Za-z0-9\\-\\s\\n\\.\\:\\,]+)\\s*a/c.*",
+            "uuid": "address_bbox_5e44a714-670f-4f4c-bfa4-b0ebdfc2be9a"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                85,
+                137,
+                299,
+                358,
+                433,
+                511
+            ],
+            "column": [
+                [
+                    "date",
+                    "random",
+                    "transaction_note",
+                    "random1",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "merge": true,
+            "uuid": "trans_bbox_ad241f02-ce2a-4ab6-b433-8ee8f3d100c9"
+        }
+    ]
+}

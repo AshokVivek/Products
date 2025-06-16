@@ -1,0 +1,82 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                11,
+                192,
+                340,
+                250
+            ],
+            "regex": "(?i).*Account\\s*:?\\s*([0-9]{8,})\\s*Date.*",
+            "uuid": "accnt_bbox_5513302d-7196-40de-9666-2339fcb9c8b8"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                159,
+                90,
+                455,
+                190
+            ],
+            "regex": "(?i).*Your\\s*details.*\\n([A-Za-z\\s]+)\\s*opening.*",
+            "uuid": "name_bbox_d7c32614-7d05-45a7-8638-ed078dd4fd22"
+        }
+    ],
+    "date_bbox": [
+        {
+            "from_bbox": [
+                341,
+                96,
+                535,
+                170
+            ],
+            "from_regex": "(?i)For.*period\\s*([0-9]{4}\\/[0-9]{1,2}\\/[0-9]{1,2})\\s*to",
+            "to_bbox": [
+                341,
+                96,
+                535,
+                170
+            ],
+            "to_regex": "(?i)For.*to\\s*([0-9]{4}\\/[0-9]{1,2}\\/[0-9]{1,2})",
+            "uuid": "date_bbox_9e3690d3-63ef-49a9-965a-053f960aa42a"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                154,
+                144,
+                350,
+                210
+            ],
+            "regex": "(?i)(?:\\s*|.*)([A-Za-z\\s\\/\\-\\,\\.0-9]+)\\s*IFSC.*",
+            "uuid": "address_bbox_4983872f-17ab-4c0f-800e-2c5fc497f8a7"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": [
+                39,
+                95,
+                242,
+                316,
+                389,
+                462,
+                554
+            ],
+            "horizontal_lines": "Text",
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "random",
+                    "debit",
+                    "credit",
+                    "balance"
+                ]
+            ],
+            "uuid": "trans_bbox_12ae1f8b-d0fc-4582-832d-bf6528b05f82"
+        }
+    ]
+}

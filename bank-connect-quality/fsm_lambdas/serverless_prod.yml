@@ -1,0 +1,777 @@
+service: bank-connect
+
+package:
+  patterns:
+    - '!node_modules/**'
+    - '!.terraform/**'
+    - '!.serverless/**'
+    - '!venv/**'
+
+custom:
+  securityGroups:
+    bank-connect-quality-sg: 'sg-04d4ba442d9a0edae'
+  subnets:
+    private-ap-south-1a: 'subnet-08d58444fbd061d47'
+    private-ap-south-1b: 'subnet-00cd94bcfe51271ff'
+    private-ap-south-1c: 'subnet-0274286ecc8259199'
+
+provider:
+  name: aws
+  region: ap-south-1
+  stage: prod
+  ecr:
+    images:
+      score_and_extraction:
+        path: .
+        platform: linux/arm64
+  logRetentionInDays: 90
+  tags:
+    Stage: prod
+    Owner: karan@finbox.in
+    ResourceType: lambda-function
+    Team: bank-connect
+    Pipeline: bank-connect
+  environment:
+      CURRENT_STAGE: ${param:CURRENT_STAGE}
+      REGION: ${param:REGION}
+      AWS_ACCOUNT_ID: ${param:AWS_ACCOUNT_ID}
+      IS_SERVER: ${param:IS_SERVER}
+      INTERNAL_API_KEY: ${param:INTERNAL_API_KEY}
+      DJANGO_BASE_URL: ${param:DJANGO_BASE_URL}
+      ENABLE_SENTRY: ${param:ENABLE_SENTRY}
+      SENTRY_DSN: ${param:SENTRY_DSN}
+      INTERNAL_QUALITY_CHECK_URL: ${param:INTERNAL_QUALITY_CHECK_URL}
+      RECURRING_MICROSERVICE_TOKEN: ${param:RECURRING_MICROSERVICE_TOKEN}
+      BANK_CONNECT_QUALITY_SECRET: ${param:BANK_CONNECT_QUALITY_SECRET}
+      BANK_CONNECT_QUALITY_PRIVATE_IP: ${param:BANK_CONNECT_QUALITY_PRIVATE_IP}
+      CATEGORIZE_RS_PRIVATE_IP: ${param:CATEGORIZE_RS_PRIVATE_IP}
+      NANONETS_API_KEY: ${param:NANONETS_API_KEY}
+      NANONETS_MODEL_ID: ${param:NANONETS_MODEL_ID}
+      FSMLIB_CC_TEMPLATE_LOGGING_TASKS_QUEUE_URL: ${param:FSMLIB_CC_TEMPLATE_LOGGING_TASKS_QUEUE_URL}
+      KAFKA_BROKER_URL: ${param:KAFKA_BROKER_URL}
+      KAFKA_TOPIC_INCONSISTENCY: ${param:KAFKA_TOPIC_INCONSISTENCY}
+      KAFKA_TOPIC_QUALITY_EVENTS: ${param:KAFKA_TOPIC_QUALITY_EVENTS}
+      TCAP_DMS_ENDPOINT: ${param:TCAP_DMS_ENDPOINT}
+      TCAP_DMS_AUTH_KEY: ${param:TCAP_DMS_AUTH_KEY}
+      PIPELINE: ${param:PIPELINE}
+      EXTRACTION_ISSUE_SLACK_TOKEN: ${param:EXTRACTION_ISSUE_SLACK_TOKEN}
+      EXTRACTION_ISSUE_SLACK_CHANNEL: ${param:EXTRACTION_ISSUE_SLACK_CHANNEL}
+      PRIMARY_EXTRACTION_QUEUE_URL: ${param:PRIMARY_EXTRACTION_QUEUE_URL}
+      SECONDARY_EXTRACTION_QUEUE_URL: ${param:SECONDARY_EXTRACTION_QUEUE_URL}
+      CLOUDWATCH_LOG_GROUP: ${param:CLOUDWATCH_LOG_GROUP}
+      RECURRING_MICROSERVICE_URL: ${param:RECURRING_MICROSERVICE_URL}
+  stackTags:
+      Pipeline: bank-connect
+      Stage: prod
+      Owner: karan@finbox.in
+      ResourceType: cloud-formation-stack
+      Team: bank-connect
+
+
+functions:
+  analyze_pdf_page_karur_enhanced:
+    image:
+      name: score_and_extraction
+      command:
+        - extraction_handler.karur_ocr_extraction_enhanced_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_pdf_page_karur_enhanced
+  
+  identity_enhanced:
+    image:
+      name: score_and_extraction
+      command:
+        - identity_handlers.identity_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 3072
+    timeout: 60
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-identity_enhanced
+
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+
+  score:
+    image:
+      name: score_and_extraction
+      command:
+        - score_handler.handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 60
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-score
+  
+  extract_transactions:
+    image:
+      name: score_and_extraction
+      command:
+        - extraction_handler.extraction_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 4096
+    timeout: 900
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-extract_transactions
+
+  extract_transactions_page:
+    image:
+      name: score_and_extraction
+      command:
+        - extraction_handler.extraction_page_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 300
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-extract_transactions_page
+      
+  cc_identity_with_ocr:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - cc_utils_ocr.cc_identity_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    architecture: arm64
+
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-cc_identity
+    
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+  
+  cc_transactions_with_ocr:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - cc_utils_ocr.extract_cc_transactions
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    architecture: arm64
+    
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-cc_transactions
+
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+  
+  cc_transactions_page_with_ocr:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - cc_utils_ocr.extract_cc_transactions_page
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    architecture: arm64
+
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-cc_transactions_page
+
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+
+  cc_access_with_ocr:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - cc_utils_ocr.cc_access
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    architecture: arm64
+    
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-cc_access
+
+  analyze_pdf_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.analyze_pdf_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 300
+    reservedConcurrency: 30
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_pdf_enhanced
+
+  analyze_pdf_page_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.analyze_pdf_page_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 4096
+    timeout: 300
+    reservedConcurrency: 600
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_pdf_page_enhanced
+
+  analyze_pdf_page_secondary_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.analyze_pdf_page_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 3072
+    timeout: 300
+    reservedConcurrency: 600
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_pdf_page_secondary_enhanced
+
+  analyze_pdf_page_ternary_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.analyze_pdf_page_ternary_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 3072
+    timeout: 300
+    reservedConcurrency: 500
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-large-pdf-extraction-prod.fifo
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_pdf_page_ternary_enhanced
+  
+  get_data_for_template_handler_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.get_data_for_template_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 120
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-get_data_for_template_handler_enhanced
+
+  transform_transaction_fsmlib_karur_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.karur_data_fsmlib_transformation_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 20
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-transform_transaction_fsmlib_karur_enhanced
+
+  update_state_fan_out_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - update_state_handlers.update_state_fan_out_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 900
+    reservedConcurrency: 100
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-advance-analysis-trigger-prod.fifo
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-update_state_fan_out_enhanced
+    
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+
+  access_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.access_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    ephemeralStorageSize: 5120
+    timeout: 240
+    reservedConcurrency: 150
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-access_enhanced
+
+  metadata_frauds_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - identity_handlers.metadata_frauds
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 150
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-metadata_frauds_enhanced
+  
+  stream_fraud_data_page_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - identity_handlers.stream_fraud_data_page
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 150
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-stream_fraud_data_page_enhanced
+
+  xlsx_report_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - metadata_handlers.xlsx_report_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 180
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-xlsx_report_enhanced
+
+  aggregate_xlsx_report_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - metadata_handlers.aggregate_xlsx_report_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 180
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-aggregate_xlsx_report_enhanced
+  
+  analyze_transactions_finvu_aa_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.analyze_transactions_finvu_aa
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 300
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_transactions_finvu_aa_enhanced
+
+  analyze_transactions_finvu_aa_page_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.analyze_transactions_finvu_aa_page
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 300
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-analyze_transactions_finvu_aa_page_enhanced
+  
+  identity_finvu_aa_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - identity_handlers.identity_handler_finvu_aa
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 300
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-identity_finvu_aa_enhanced
+
+  status_poll_finvu_aa_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - finvu_aa_handlers.poll_finsense_for_status
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 300
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-aa-finvu-request-status-polling-prod
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-status_poll_finvu_aa_enhanced
+
+  generate_pdf_page_hashes_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.generate_statement_page_hashes
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    ephemeralStorageSize: 2048
+    timeout: 120
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-pdf-page-hash-generation-prod.fifo
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-generate_pdf_page_hashes_enhanced
+
+  perfios_report_fetch_and_transform_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - perfios_integration_iifl_handlers.perfios_report_fetch_and_transform
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 120
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-perf-report-fetch-prod.fifo
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-perfios_report_fetch_and_transform_enhanced
+  
+  process_external_perfios_report_xml_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - perfios_integration_iifl_handlers.parse_external_perfios_xml_report
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 120
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-process_external_perfios_report_xml_enhanced
+
+  push_identity_to_portaldb_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - identity_handlers.push_identity_to_portaldb
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 120
+    
+    events:
+      - stream:
+          arn: arn:aws:dynamodb:ap-south-1:905031918257:table/bank-connect-identity-prod/stream/2023-09-02T18:13:14.206
+          batchSize: 50
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-push_identity_to_portaldb_enhanced
+
+  upload_perfios_pdf_to_bc_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - perfios_pdf_upload_to_bc.upload_perfios_pdf_to_bc
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 90
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-upload-perf-pdf-to-bc-prod
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-upload_perfios_pdf_to_bc_enhanced
+      
+  #only for iifl_fraud_flow, need to be removed in future
+  iifl_fraud_flow_enhanced:  
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - perfios_integration_iifl_handlers.iifl_fraud_flow
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 30
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-iifl_fraud_flow_enhanced
+
+  cache_access_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.cache_access
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 120
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-cache_access_enhanced
+
+
+  
+  bc_p_mapping_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - bc_p_mapping.bc_p_mapping_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 120
+    
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-bc_p_mapping_enhanced
+  
+  invoke_quality_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - quality_handlers.invoke_quality_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 128
+    timeout: 30
+    
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-quality-task-prod
+          batchSize: 50
+          maximumBatchingWindow: 120
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-invoke_quality_enhanced
+    
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+  
+  scanned_pdfs_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - scanned_pdf.nanonets_integration
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 1024
+    timeout: 300
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-scanned_pdfs_enhanced
+
+  categorisation_handler:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.categorisation_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 900
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-categorisation_handler
+  
+  categorisation_handler_page:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - handlers.categorisation_handler_page
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 60
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-categorisation_handler_page
+
+  xml_report_handler:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - xml_report_handler.xml_report_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-xml_report_handler
+
+  cache_subscribed_data:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - cache_subscribed_data_handler.cache_subscribed_data_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 120
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-cache_subscribed_data
+
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+
+
+  invoke_session_status_handler_enhanced:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - webhook_handlers.invoke_session_status_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    ephemeralStorageSize: 2048
+    timeout: 180
+
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:905031918257:bank-connect-session-expiry-prod
+          batchSize: 1
+
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-invoke_session_status_handler_enhanced
+
+  dms_push_handler:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command:
+        - dms_push_handler.dms_push_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    ephemeralStorageSize: 2048
+    timeout: 120
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-dms_push_handler
+
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}
+  
+  textract_function:
+    runtime: python3.8
+    image:
+      name: score_and_extraction
+      command: 
+        - scanned_pdf.textract_event_handler
+    role: arn:aws:iam::905031918257:role/bank-connect-lambdas-iam-role-prod
+    memorySize: 2048
+    timeout: 600
+    architecture: arm64
+    tags:
+      Name: ${self:provider.stackTags.Pipeline}-${self:provider.stackTags.Stage}-textract_function
+    vpc:
+      securityGroupIds:
+        - ${self:custom.securityGroups.bank-connect-quality-sg}
+      subnetIds:
+        - ${self:custom.subnets.private-ap-south-1a}
+        - ${self:custom.subnets.private-ap-south-1b}
+        - ${self:custom.subnets.private-ap-south-1c}

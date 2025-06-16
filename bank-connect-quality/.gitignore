@@ -1,0 +1,10 @@
+*.pyc
+*.db
+venv
+env
+.env
+.venv
+.vscode
+.idea
+.DS_Store
+sample_payload_quality.json

@@ -1,0 +1,80 @@
+{
+    "accnt_bbox": [
+        {
+            "bbox": [
+                365,
+                203,
+                624,
+                299
+            ],
+            "regex": "(?i)(?:\\s*|.*)Account\\s*No.\\s*:?\\s*([0-9]{8,}).*",
+            "uuid": "accnt_bbox_b5ee5f30-7303-4d79-8519-9f4623516daf"
+        }
+    ],
+    "name_bbox": [
+        {
+            "bbox": [
+                45,
+                202,
+                367,
+                299
+            ],
+            "regex": "(?i).*Customer\n(.*)\nName.*",
+            "uuid": "name_bbox_e3558ae9-25e9-4335-966c-48e949069f45"
+        }
+    ],
+    "address_bbox": [
+        {
+            "bbox": [
+                45,
+                202,
+                367,
+                299
+            ],
+            "regex": "(?i)(?:\\s*|.*)Address\\s*:?\\s*(.*)\\s*Joint.*",
+            "uuid": "address_bbox_ca91b994-bb2a-4771-a822-66a4c9a10f2e"
+        }
+    ],
+    "ifsc_bbox": [
+        {
+            "bbox": [
+                84,
+                111,
+                471,
+                197
+            ],
+            "regex": "(?i).*IFSC\\s*Code\\s*:?\\s*([A-Z]{4}[0-9]{7}).*",
+            "uuid": "ifsc_bbox_af8e1113-42ce-400a-a55d-536aace4cf14"
+        }
+    ],
+    "micr_bbox": [
+        {
+            "bbox": [
+                84,
+                111,
+                471,
+                197
+            ],
+            "regex": "(?i).*MICR\\s*Code\\s*:?\\s*([0-9]{9}).*",
+            "uuid": "micr_bbox_c553fd7a-a424-40fa-aa27-e85d52e924e9"
+        }
+    ],
+    "trans_bbox": [
+        {
+            "vertical_lines": true,
+            "horizontal_lines": true,
+            "column": [
+                [
+                    "date",
+                    "transaction_note",
+                    "random",
+                    "debit",
+                    "credit",
+                    "balance",
+                    "random2"
+                ]
+            ],
+            "uuid": "trans_bbox_d35e441e-efa8-4df5-88c3-e59293e6e27d"
+        }
+    ]
+}
